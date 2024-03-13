@@ -1,0 +1,38 @@
+{
+  "extends": ["plugin:prettier/recommended"],
+  "overrides": [
+    // Configuration for mjs files
+    {
+      "files": ["**/*.mjs"],
+      "parserOptions": {
+        "sourceType": "module",
+        "ecmaVersion": 2015,
+      },
+      "extends": ["plugin:prettier/recommended"],
+    },
+    // Configuration for TypeScript files
+    {
+      "files": ["**/*.ts", "**/*.tsx"],
+      "plugins": ["@typescript-eslint", "simple-import-sort"],
+      "extends": ["plugin:prettier/recommended"],
+      "parserOptions": {
+        "project": "./tsconfig.json",
+      },
+    },
+    // Configuration for Astro
+    {
+      "files": ["**/*.astro"],
+      "plugins": ["@typescript-eslint", "simple-import-sort"],
+      "extends": ["plugin:prettier/recommended"],
+      "parser": "astro-eslint-parser",
+      "parserOptions": {
+        "parser": "@typescript-eslint/parser",
+        "project": "./tsconfig.json",
+        "extraFileExtensions": [".astro"],
+      },
+      "globals": {
+        "Astro": "readonly",
+      },
+    },
+  ],
+}
