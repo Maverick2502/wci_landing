@@ -1,7 +1,7 @@
 // Base
-@import "./base/normalize";
-@import "./base/global.scss";
+@use "./base/normalize";
+@use "./base/global.scss";
 
 // Utils
-@import "./utilities/variables.scss";
-@import "./utilities/mixins.scss";
+@use "./utilities/variables.scss";
+@use "./utilities/mixins.scss";
