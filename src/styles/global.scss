@@ -1,0 +1,38 @@
+@import "./normalize";
+@import "./mixins.scss";
+@import "./variables.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  font-family: "Inter", sans-serif;
+
+  border: none;
+  outline: none;
+  text-decoration: none;
+  list-style: none;
+
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #f6f6f9;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #bcc0be;
+    border-radius: 4px;
+    &:hover {
+      background: rgb(148, 153, 150);
+    }
+  }
+}
+
+body {
+  font-family: "Asgard Trial", sans-serif;
+  background-color: #f6f6f9;
+  color: #0b1f35;
+}
