@@ -7,7 +7,7 @@
   "arrowParens": "avoid",
   "semi": true,
   "bracketSpacing": true,
-  "plugins": ["prettier", "prettier-plugin-astro"],
+  "plugins": ["prettier-plugin-astro"],
   "overrides": [
     {
       "files": "*.astro",
