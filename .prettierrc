@@ -1,0 +1,19 @@
+{
+  "singleQuote": false,
+  "tabWidth": 2,
+  "endOfLine": "lf",
+  "trailingComma": "all",
+  "printWidth": 120,
+  "arrowParens": "avoid",
+  "semi": true,
+  "bracketSpacing": true,
+  "plugins": ["prettier", "prettier-plugin-astro"],
+  "overrides": [
+    {
+      "files": "*.astro",
+      "options": {
+        "parser": "astro"
+      }
+    }
+  ]
+}
