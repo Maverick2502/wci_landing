@@ -1,13 +1,15 @@
-@import "./normalize";
-@import "./mixins.scss";
-@import "./variables.scss";
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 
-  font-family: "Inter", sans-serif;
+  font-family: "Asgard Trial", sans-serif;
 
   border: none;
   outline: none;
