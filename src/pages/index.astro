@@ -1,38 +1,37 @@
 ---
 import Layout from "@layouts/Layout.astro";
 import "@styles/index.scss";
-import logo from "@assets/icons/plus.svg";
-import { Image } from "astro:assets";
 import "./styles.scss";
+import { Image } from "astro:assets";
+import logo from "@assets/icons/wci.svg";
 ---
 
 <Layout title="Welcome to Astro.">
-  <div class="root">
-    <header class="header">
-      <div class="header__container">
-        <Image src={logo} alt="logo" />
+  <header class="header">
+    <div class="header__container">
+      <Image src={logo} alt="logo/" loading="eager" decoding="async" />
 
-        <div class="header__btns">
-          <div class="language-switcher">
-            <ul class="language-switcher__languages">
-              <li>ENG</li>
-              <li>RU</li>
-            </ul>
-          </div>
-
-          <div class="menu-toggle">
-            <button class="menu-toggle__btn">Меню</button>
-          </div>
+      <div class="header__btns">
+        <div class="switcher">
+          <button>ENG</button>
+          <button>RU</button>
+        </div>
+        <div class="menu">
+          <button class="menu__btn">Menu</button>
         </div>
       </div>
-    </header>
+    </div>
+  </header>
 
-    <main class="main">
-      <section class="hero">
-        <!-- <div class="hero__container">PRACTICE MAKES PERFECT!</div> -->
-      </section>
-    </main>
+  <main>
+    <section class="hero">
+      <div class="hero__container">sd</div>
+    </section>
+  </main>
 
-    <footer>footer</footer>
-  </div>
+  <footer class="footer">
+    <div class="footer__container">
+      <h1>FOOTER</h1>
+    </div>
+  </footer>
 </Layout>
