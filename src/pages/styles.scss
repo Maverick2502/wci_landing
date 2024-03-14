@@ -4,3 +4,49 @@
 main {
   flex-grow: 1;
 }
+
+.hero {
+  background-color: $blue-main-color;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+
+    max-width: $desktop-width;
+    margin: 0 auto;
+
+    padding: 0 20px;
+
+    color: #fff;
+
+    & > h1 {
+      font-size: 120px;
+      font-weight: 700;
+      line-height: 130%; /* 156px */
+      text-transform: uppercase;
+
+      margin-bottom: 16px;
+    }
+
+    & > p {
+      font-size: 32px;
+      font-weight: 400;
+      line-height: 130%; /* 41.6px */
+
+      margin-bottom: 64px;
+    }
+
+    & > button {
+      max-width: 290px;
+
+      padding: 24px 50px;
+      border-radius: $btn-border-radius-xl;
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 130%;
+      color: $black-main-color;
+
+      cursor: pointer;
+    }
+  }
+}

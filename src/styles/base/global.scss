@@ -40,3 +40,33 @@ body {
   min-height: 100vh;
   font-family: "Asgard Trial", sans-serif;
 }
+
+@font-face {
+  font-family: "Asgard Trial Regular";
+  src: url("/fonts/AsgardTrial-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Asgard Trial Light";
+  src: url("/fonts/AsgardTrial-Light.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Asgard Trial Bold";
+  src: url("/fonts/AsgardTrial-Bold.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Asgard Trial Medium";
+  src: url url("/fonts/AsgardTrial-Medium.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
