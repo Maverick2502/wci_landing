@@ -1,0 +1,21 @@
+---
+import "./header.scss";
+import { Image } from "astro:assets";
+import logo from "@assets/icons/wci.svg";
+---
+
+<header class="header">
+  <div class="header__container">
+    <Image src={logo} alt="logo/" loading="eager" decoding="async" />
+
+    <div class="header__btns">
+      <div class="switcher">
+        <button>ENG</button>
+        <button>RU</button>
+      </div>
+      <div class="menu">
+        <button class="menu__btn">Menu</button>
+      </div>
+    </div>
+  </div>
+</header>

@@ -1,37 +1,19 @@
 ---
 import Layout from "@layouts/Layout.astro";
+import Header from "@components/sections/header/header.astro";
+import Footer from "@components/sections/footer/footer.astro";
 import "@styles/index.scss";
 import "./styles.scss";
-import { Image } from "astro:assets";
-import logo from "@assets/icons/wci.svg";
 ---
 
 <Layout title="Welcome to Astro.">
-  <header class="header">
-    <div class="header__container">
-      <Image src={logo} alt="logo/" loading="eager" decoding="async" />
-
-      <div class="header__btns">
-        <div class="switcher">
-          <button>ENG</button>
-          <button>RU</button>
-        </div>
-        <div class="menu">
-          <button class="menu__btn">Menu</button>
-        </div>
-      </div>
-    </div>
-  </header>
-
+  <Header />
   <main>
     <section class="hero">
-      <div class="hero__container">sd</div>
+      <div class="hero__container">
+        <h1>MAIN</h1>
+      </div>
     </section>
   </main>
-
-  <footer class="footer">
-    <div class="footer__container">
-      <h1>FOOTER</h1>
-    </div>
-  </footer>
+  <Footer />
 </Layout>
