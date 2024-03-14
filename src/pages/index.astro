@@ -1,18 +1,38 @@
 ---
 import Layout from "@layouts/Layout.astro";
 import "@styles/index.scss";
-import logo from "@assets/images/wci.svg";
+import logo from "@assets/icons/plus.svg";
 import { Image } from "astro:assets";
+import "./styles.scss";
 ---
 
 <Layout title="Welcome to Astro.">
-  <main>
-    <section>
-      <header>
+  <div class="root">
+    <header class="header">
+      <div class="header__container">
         <Image src={logo} alt="logo" />
 
-        <div>TEST | TEST</div>
-      </header>
-    </section>
-  </main>
+        <div class="header__btns">
+          <div class="language-switcher">
+            <ul class="language-switcher__languages">
+              <li>ENG</li>
+              <li>RU</li>
+            </ul>
+          </div>
+
+          <div class="menu-toggle">
+            <button class="menu-toggle__btn">Меню</button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="main">
+      <section class="hero">
+        <!-- <div class="hero__container">PRACTICE MAKES PERFECT!</div> -->
+      </section>
+    </main>
+
+    <footer>footer</footer>
+  </div>
 </Layout>
