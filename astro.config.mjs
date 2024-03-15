@@ -5,7 +5,7 @@ import react from "@astrojs/react";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [astroI18next(), react()],
+  integrations: [astroI18next(), , react()],
   vite: {
     plugins: [
       VitePluginFonts({
