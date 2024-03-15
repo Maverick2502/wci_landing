@@ -9,6 +9,7 @@
     "preview": "astro preview",
     "astro": "astro",
     "prepare": "husky install",
+    "i18n:generate": "astro-i18next generate",
     "husky": {
       "hooks": {
         "pre-commit": "lint-staged"
@@ -16,22 +17,27 @@
     }
   },
   "lint-staged": {
-    "*.{astro,ts}": [
-      "prettier --write ./src",
-      "eslint --cache --fix ./src"
+    "*.{astro,ts, tsx}": [
+      "prettier --write ./src"
     ],
     "*.{md,html,scss,json}": "prettier --write"
   },
   "dependencies": {
     "@astrojs/check": "^0.5.7",
+    "@astrojs/react": "^3.1.0",
     "astro": "^4.5.2",
     "astro-i18next": "^1.0.0-beta.21",
     "i18next": "^23.10.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-i18next": "^14.1.0",
     "typescript": "^5.4.2"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.0.3",
     "@commitlint/config-conventional": "^17.0.3",
+    "@types/react": "^18.2.66",
+    "@types/react-dom": "^18.2.22",
     "@typescript-eslint/eslint-plugin": "^7.2.0",
     "@typescript-eslint/parser": "^7.2.0",
     "astro-eslint-parser": "^0.16.3",
