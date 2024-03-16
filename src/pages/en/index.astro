@@ -3,7 +3,9 @@ import Footer from "@components/sections/footer/footer.astro";
 import Header from "@components/sections/header/header.astro";
 import Layout from "@layouts/Layout.astro";
 import "@styles/index.scss";
+import { LanguageSelector } from "astro-i18next/components";
 import { changeLanguage, t } from "i18next";
+import { Trans } from "react-i18next";
 import "virtual:fonts.css";
 import Card from "../../components/Card";
 import "../styles.scss";
@@ -13,12 +15,19 @@ changeLanguage("en");
 
 <Layout title="Welcome to Astro.">
   <Header />
+  <LanguageSelector />
   <main>
     <section class="hero">
       <div class="hero__container">
-        <h1>Решения для IT-аутсорсинга.</h1>
-        <p>Максимальная эффективность вашего IT-бизнеса с нашими услугами аутсорсинга и аутстаффинга</p>
-        <button>Заказать услугу</button>
+        <h1>
+          <Trans i18nKey="hero.header">РЕШЕНИЯ ДЛЯ IT-АУТСОРСИНГА. </Trans>
+        </h1>
+        <p>
+          <Trans i18nKey="hero.paragraph">РЕШЕНИЯ ДЛЯ IT-АУТСОРСИНГА.</Trans>
+        </p>
+        <button>
+          <Trans i18nKey="hero.button">Заказать услугу</Trans>
+        </button>
       </div>
     </section>
   </main>

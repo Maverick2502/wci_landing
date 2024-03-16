@@ -1,3 +1,8 @@
 {
-  "menu": "Hello, React!"
+  "menu": "Hello, React!",
+  "hero": {
+    "header": "IT OUTSOURCING SOLUTIONS.",
+    "paragraph": "Maximize the efficiency of your IT business with our outsourcing and outstaffing services.",
+    "button": "Order a service"
+  }
 }

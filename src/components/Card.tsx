@@ -5,7 +5,7 @@ function Card() {
 
   return (
     <div>
-      <pre style={{ color: "teal" }}>{t("menu")}</pre>
+      <pre>{t("menu")}</pre>
     </div>
   );
 }
