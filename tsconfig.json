@@ -5,7 +5,8 @@
     // "tsx": "react",
     "paths": {
       "@assets/*": ["src/assets/*"],
-      "@components/*": ["src/components/*"],
+      "@shared/*": ["src/shared/*"],
+      "@widgets/*": ["src/widgets/*"],
       "@layouts/*": ["src/layouts/*"],
       "@pages/*": ["src/pages/*"],
       "@styles/*": ["src/styles/*"]
