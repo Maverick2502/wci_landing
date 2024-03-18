@@ -2,6 +2,7 @@
 
 .hero {
   background-color: $blue-main-color;
+  border: 1px solid #000;
 
   &__container {
     display: flex;

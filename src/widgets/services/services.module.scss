@@ -1,0 +1,15 @@
+@import "../../styles/utilities/variables.scss";
+
+.services {
+  background-color: #fff;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+
+    max-width: $desktop-width;
+    margin: 0 auto;
+
+    padding: 40px 20px;
+  }
+}
