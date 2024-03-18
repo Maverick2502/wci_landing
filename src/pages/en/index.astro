@@ -1,10 +1,10 @@
 ---
 import Layout from "@layouts/Layout.astro";
-import Card from "@shared/Card";
 import "@styles/index.scss";
 import Footer from "@widgets/footer/Footer.astro";
 import Header from "@widgets/header/Header.astro";
 import Hero from "@widgets/hero/Hero.astro";
+import Services from "@widgets/services/Services.astro";
 import { changeLanguage } from "i18next";
 import "virtual:fonts.css";
 import "../styles.scss";
@@ -17,7 +17,8 @@ changeLanguage("en");
   <!-- <LanguageSelector /> -->
   <main>
     <Hero />
+    <Services />
   </main>
-  <Card client:visible />
+  <!-- <Card client:visible /> -->
   <Footer />
 </Layout>

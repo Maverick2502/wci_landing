@@ -1,7 +1,8 @@
 {
   "menu": "Menu",
   "hero": {
-    "header": "IT OUTSOURCING SOLUTIONS.",
+    "headerFirstLine": "IT OUTSOURCING",
+    "headerSecondLine": "SOLUTIONS.",
     "paragraph": "Maximize the efficiency of your IT business with our outsourcing and outstaffing services.",
     "button": "Order a service"
   }

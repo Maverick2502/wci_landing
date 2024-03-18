@@ -1,12 +1,14 @@
 ---
 import { t } from "i18next";
-import "./hero.scss";
+import styles from "./hero.module.scss";
 ---
 
-<section class="hero">
-  <div class="hero__container">
+<section class={styles["hero"]}>
+  <div class={styles["hero__container"]}>
     <h1>
-      {t("hero.header")}
+      {t("hero.headerFirstLine")}
+      <br />
+      {t("hero.headerSecondLine")}
     </h1>
     <p>
       {t("hero.paragraph")}
