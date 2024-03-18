@@ -1,37 +1,23 @@
 ---
+import Layout from "@layouts/Layout.astro";
+import Card from "@shared/Card";
 import "@styles/index.scss";
-import { LanguageSelector } from "astro-i18next/components";
-import { changeLanguage, t } from "i18next";
-import { Trans } from "react-i18next";
+import Footer from "@widgets/footer/Footer.astro";
+import Header from "@widgets/header/Header.astro";
+import Hero from "@widgets/hero/Hero.astro";
+import { changeLanguage } from "i18next";
 import "virtual:fonts.css";
 import "../styles.scss";
-import Layout from "@layouts/Layout.astro";
-import Header from "@widgets/header/Header.astro";
-import Card from "@shared/Card";
-import Footer from "@widgets/footer/Footer.astro";
 
 changeLanguage("en");
 ---
 
 <Layout title="Welcome to Astro.">
   <Header />
-  <LanguageSelector />
+  <!-- <LanguageSelector /> -->
   <main>
-    <section class="hero">
-      <div class="hero__container">
-        <h1>
-          <Trans i18nKey="hero.header">РЕШЕНИЯ ДЛЯ IT-АУТСОРСИНГА. </Trans>
-        </h1>
-        <p>
-          <Trans i18nKey="hero.paragraph">РЕШЕНИЯ ДЛЯ IT-АУТСОРСИНГА.</Trans>
-        </p>
-        <button>
-          <Trans i18nKey="hero.button">Заказать услугу</Trans>
-        </button>
-      </div>
-    </section>
+    <Hero />
   </main>
-  <h1>{t("menu")}</h1>
   <Card client:visible />
   <Footer />
 </Layout>

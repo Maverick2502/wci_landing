@@ -1,13 +1,9 @@
-import { useTranslation } from "react-i18next";
+// import { useTranslation } from "react-i18next";
 
 function Card() {
-  const { t } = useTranslation("translation");
+  // const { t } = useTranslation("translation");
 
-  return (
-    <div>
-      <pre>{t("menu")}</pre>
-    </div>
-  );
+  return <div>REACT</div>;
 }
 
 export default Card;

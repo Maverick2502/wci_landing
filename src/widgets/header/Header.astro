@@ -1,20 +1,26 @@
 ---
-import "./header.scss";
-import { Image } from "astro:assets";
+import menuWhite from "@assets/icons/menu_white.svg";
 import logo from "@assets/icons/wci.svg";
+import { Image } from "astro:assets";
+import { t } from "i18next";
+import "./header.scss";
 ---
 
 <header class="header">
   <div class="header__container">
     <Image src={logo} alt="logo/" loading="eager" decoding="async" />
-
     <div class="header__btns">
       <div class="switcher">
         <button>ENG</button>
         <button>RU</button>
       </div>
       <div class="menu">
-        <button class="menu__btn">Menu</button>
+        <button class="menu__btn">
+          <span>
+            {t("menu")}
+          </span>
+          <Image src={menuWhite} alt="menu" />
+        </button>
       </div>
     </div>
   </div>
