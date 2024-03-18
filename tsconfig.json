@@ -10,6 +10,5 @@
       "@pages/*": ["src/pages/*"],
       "@styles/*": ["src/styles/*"]
     }
-  },
-  "include": ["./src/**/*.tsx"]
+  }
 }
