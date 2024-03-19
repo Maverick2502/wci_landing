@@ -13,6 +13,9 @@
     padding-top: 105px;
     padding-left: 20px;
     padding-right: 20px;
+
+    position: relative;
+    z-index: 999;
   }
 
   &__btns {
