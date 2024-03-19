@@ -4,6 +4,7 @@ import logo from "@assets/icons/wci.svg";
 import { Image } from "astro:assets";
 import { t } from "i18next";
 import styles from "./header.module.scss";
+import Header from "@shared/Header/index";
 ---
 
 <header class={styles["header"]}>
@@ -17,14 +18,15 @@ import styles from "./header.module.scss";
         </button>
         <button>RU</button>
       </div>
-      <div class={styles["menu"]}>
+      <Header client:visible />
+      <!-- <div class={styles["menu"]}>
         <button class={styles["menu__btn"]}>
           <span>
             {t("menu")}
           </span>
           <Image src={menuWhite} alt="menu" />
         </button>
-      </div>
+      </div> -->
     </div>
   </div>
 </header>
