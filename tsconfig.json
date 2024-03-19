@@ -1,15 +1,17 @@
 {
   "extends": "astro/tsconfigs/strict",
   "compilerOptions": {
-    "baseUrl": ".",
-    // "tsx": "react",
+    "baseUrl": "src",
     "paths": {
-      "@assets/*": ["src/assets/*"],
-      "@shared/*": ["src/shared/*"],
-      "@widgets/*": ["src/widgets/*"],
-      "@layouts/*": ["src/layouts/*"],
-      "@pages/*": ["src/pages/*"],
-      "@styles/*": ["src/styles/*"]
-    }
+      "@assets/*": ["./assets/*"],
+      "@shared/*": ["./shared/*"],
+      "@shadcn/*": ["./shared/shadcn/*"],
+      "@widgets/*": ["./widgets/*"],
+      "@layouts/*": ["./layouts/*"],
+      "@pages/*": ["./pages/*"],
+      "@styles/*": ["./styles/*"]
+    },
+    "jsx": "react-jsx",
+    "jsxImportSource": "react"
   }
 }

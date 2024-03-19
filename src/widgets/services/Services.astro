@@ -1,4 +1,5 @@
 ---
+import Card from "@shared/Card";
 import styles from "./services.module.scss";
 import InfiniteMovingText from "@shared/InfiniteMovingText/InfiniteMovingText.astro";
 ---
@@ -6,5 +7,6 @@ import InfiniteMovingText from "@shared/InfiniteMovingText/InfiniteMovingText.as
 <section class={styles["services"]}>
   <div class={styles["services__container"]}>
     <InfiniteMovingText headerText="Наши услуги" />
+    <Card client:only="react" />
   </div>
 </section>
