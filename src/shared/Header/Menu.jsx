@@ -11,6 +11,7 @@ const menu = {
     height: "560px",
     top: "-20px",
     right: "-20px",
+    borderRadius: "15px",
     transition: { duration: 0.75, type: "tween", ease: [0.76, 0, 0.24, 1] },
   },
   closed: {
@@ -18,11 +19,12 @@ const menu = {
     height: "40px",
     top: "0px",
     right: "0px",
+    borderRadius: "15px",
     transition: { duration: 0.75, delay: 0.35, type: "tween", ease: [0.76, 0, 0.24, 1] },
   },
 };
 
-export default function Header() {
+export default function Menu() {
   const [isActive, setIsActive] = useState(false);
 
   return (
