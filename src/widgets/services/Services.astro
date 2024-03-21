@@ -8,8 +8,8 @@ import "./services.scss";
       <h1>Наши услуги</h1>
     </div>
 
-    <div class="accordion" role="tablist" aria-multiselectable="true">
-      <div class="accordion__item" role="tab">
+    <div class="accordion">
+      <div class="accordion__item">
         <button
           id="heading-1"
           aria-controls="collapse-1"
@@ -20,7 +20,7 @@ import "./services.scss";
         >
           IT-аутсорсинг
         </button>
-        <div class="accordion__item__body" id="collapse-1" aria-labelledby="heading-1" role="tabpanel">
+        <div class="accordion__item__body" id="collapse-1" aria-labelledby="heading-1">
           <div class="accordion__item__body__content">
             <p>Системы управления проектами</p>
             <p>Системы управления задачами (Task Management Systems)</p>
@@ -30,7 +30,7 @@ import "./services.scss";
 
       <div class="border"></div>
 
-      <div class="accordion__item" role="tab">
+      <div class="accordion__item">
         <button
           id="heading-2"
           aria-controls="collapse-2"
@@ -41,7 +41,7 @@ import "./services.scss";
         >
           Решения по аутстаффингу
         </button>
-        <div class="accordion__item__body" id="collapse-2" aria-labelledby="heading-2" role="tabpanel">
+        <div class="accordion__item__body" id="collapse-2" aria-labelledby="heading-2">
           <div class="accordion__item__body__content">
             <p>Системы управления проектами</p>
             <p>Системы управления задачами (Task Management Systems)</p>
@@ -51,7 +51,7 @@ import "./services.scss";
 
       <div class="border"></div>
 
-      <div class="accordion__item" role="tab">
+      <div class="accordion__item">
         <button
           id="heading-3"
           aria-controls="collapse-3"
@@ -62,7 +62,7 @@ import "./services.scss";
         >
           Разработка ПО
         </button>
-        <div class="accordion__item__body" id="collapse-3" aria-labelledby="heading-3" role="tabpanel">
+        <div class="accordion__item__body" id="collapse-3" aria-labelledby="heading-3">
           <div class="accordion__item__body__content">
             <p>Системы управления проектами</p>
             <p>Системы управления задачами (Task Management Systems)</p>
@@ -72,7 +72,7 @@ import "./services.scss";
 
       <div class="border"></div>
 
-      <div class="accordion__item" role="tab">
+      <div class="accordion__item">
         <button
           id="heading-4"
           aria-controls="collapse-4"
@@ -83,7 +83,7 @@ import "./services.scss";
         >
           Услуги по кибербезопасности
         </button>
-        <div class="accordion__item__body" id="collapse-4" aria-labelledby="heading-4" role="tabpanel">
+        <div class="accordion__item__body" id="collapse-4" aria-labelledby="heading-4">
           <div class="accordion__item__body__content">
             <p>Системы управления проектами</p>
             <p>Системы управления задачами (Task Management Systems)</p>
@@ -93,7 +93,7 @@ import "./services.scss";
 
       <div class="border"></div>
 
-      <div class="accordion__item" role="tab">
+      <div class="accordion__item">
         <button
           id="heading-5"
           aria-controls="collapse-5"
@@ -104,7 +104,7 @@ import "./services.scss";
         >
           Консалтинг и стратегия
         </button>
-        <div class="accordion__item__body" id="collapse-5" aria-labelledby="heading-5" role="tabpanel">
+        <div class="accordion__item__body" id="collapse-5" aria-labelledby="heading-5">
           <div class="accordion__item__body__content">
             <p>Системы управления проектами</p>
             <p>Системы управления задачами (Task Management Systems)</p>
@@ -113,89 +113,89 @@ import "./services.scss";
       </div>
     </div>
   </div>
-
-  <script>
-    const accordion = document.querySelector(".accordion") as HTMLElement;
-
-    function handleAccordionClick(event: Event) {
-      if (!(event.target instanceof HTMLElement)) return;
-
-      if (event.target.classList.contains("accordion__item__header")) {
-        const accordionItemHeader = event.target;
-        const accordionItemBody = accordionItemHeader.nextElementSibling as HTMLElement; // Close other open items
-
-        const currentlyActiveHeader = document.querySelector(".accordion__item__header.active") as HTMLElement | null;
-        if (currentlyActiveHeader && currentlyActiveHeader !== accordionItemHeader) {
-          currentlyActiveHeader.classList.remove("active");
-          currentlyActiveHeader.setAttribute("aria-expanded", "false"); // Update aria-expanded
-          currentlyActiveHeader.nextElementSibling!.style.maxHeight = "0";
-        } // Toggle the active state and adjust the height and 'aria-expanded'
-
-        accordionItemHeader.classList.toggle("active");
-        const expandedState = accordionItemHeader.classList.contains("active");
-        accordionItemHeader.setAttribute("aria-expanded", expandedState);
-
-        accordionItemBody.style.maxHeight = expandedState ? `${accordionItemBody.scrollHeight}px` : "0";
-      }
-    }
-
-    accordion!.addEventListener("click", handleAccordionClick);
-
-    interface AccordionItemHeader extends HTMLElement {
-      click(): void;
-    }
-
-    function handleKeyDown(event: KeyboardEvent) {
-      if (!(event.target instanceof HTMLElement)) return;
-
-      const closestHeader = event.target.closest(".accordion__item__header") as AccordionItemHeader | null;
-
-      if (closestHeader) {
-        switch (event.key) {
-          case "ArrowDown":
-            event.preventDefault();
-            getNextHeader(closestHeader).focus();
-            break;
-          case "ArrowUp":
-            event.preventDefault();
-            getPreviousHeader(closestHeader).focus();
-            break;
-          case " ": // Spacebar to toggle
-          case "Enter":
-            event.preventDefault();
-            closestHeader.click();
-            break;
-        }
-      }
-    }
-
-    function getNextHeader(currentHeader: AccordionItemHeader): AccordionItemHeader {
-      let nextSibling = currentHeader.parentElement.nextElementSibling as HTMLElement | null;
-
-      while (nextSibling) {
-        const header = nextSibling.querySelector(".accordion__item__header") as AccordionItemHeader | null;
-        if (header) return header;
-        nextSibling = nextSibling.nextElementSibling as HTMLElement | null;
-      }
-
-      // Loop to the first header:
-      return accordion.querySelector(".accordion__item__header") as AccordionItemHeader;
-    }
-
-    function getPreviousHeader(currentHeader: AccordionItemHeader): AccordionItemHeader {
-      let previous = currentHeader.parentElement.previousElementSibling;
-      while (previous) {
-        if (previous.querySelector(".accordion__item__header")) {
-          return previous.querySelector(".accordion__item__header");
-        }
-        previous = previous.previousElementSibling;
-      }
-      // Loop back to the last header if at the beginning
-      const allHeaders = accordion!.querySelectorAll(".accordion__item__header");
-      return allHeaders[allHeaders.length - 1];
-    }
-
-    accordion.addEventListener("click", handleAccordionClick);
-    accordion.addEventListener("keydown", handleKeyDown);
-  </script>
 </section>
+
+<script>
+  const accordion = document.querySelector(".accordion") as HTMLElement;
+
+  function handleAccordionClick(event: Event) {
+    if (!(event.target instanceof HTMLElement)) return;
+
+    if (event.target.classList.contains("accordion__item__header")) {
+      const accordionItemHeader = event.target;
+      const accordionItemBody = accordionItemHeader.nextElementSibling as HTMLElement; // Close other open items
+
+      const currentlyActiveHeader = document.querySelector(".accordion__item__header.active") as HTMLElement | null;
+      if (currentlyActiveHeader && currentlyActiveHeader !== accordionItemHeader) {
+        currentlyActiveHeader.classList.remove("active");
+        currentlyActiveHeader.setAttribute("aria-expanded", "false"); // Update aria-expanded
+        currentlyActiveHeader.nextElementSibling!.style.maxHeight = "0";
+      } // Toggle the active state and adjust the height and 'aria-expanded'
+
+      accordionItemHeader.classList.toggle("active");
+      const expandedState = accordionItemHeader.classList.contains("active");
+      accordionItemHeader.setAttribute("aria-expanded", expandedState);
+
+      accordionItemBody.style.maxHeight = expandedState ? `${accordionItemBody.scrollHeight}px` : "0";
+    }
+  }
+
+  accordion!.addEventListener("click", handleAccordionClick);
+
+  interface AccordionItemHeader extends HTMLElement {
+    click(): void;
+  }
+
+  function handleKeyDown(event: KeyboardEvent) {
+    if (!(event.target instanceof HTMLElement)) return;
+
+    const closestHeader = event.target.closest(".accordion__item__header") as AccordionItemHeader | null;
+
+    if (closestHeader) {
+      switch (event.key) {
+        case "ArrowDown":
+          event.preventDefault();
+          getNextHeader(closestHeader).focus();
+          break;
+        case "ArrowUp":
+          event.preventDefault();
+          getPreviousHeader(closestHeader).focus();
+          break;
+        case " ": // Spacebar to toggle
+        case "Enter":
+          event.preventDefault();
+          closestHeader.click();
+          break;
+      }
+    }
+  }
+
+  function getNextHeader(currentHeader: AccordionItemHeader): AccordionItemHeader {
+    let nextSibling = currentHeader.parentElement.nextElementSibling as HTMLElement | null;
+
+    while (nextSibling) {
+      const header = nextSibling.querySelector(".accordion__item__header") as AccordionItemHeader | null;
+      if (header) return header;
+      nextSibling = nextSibling.nextElementSibling as HTMLElement | null;
+    }
+
+    // Loop to the first header:
+    return accordion.querySelector(".accordion__item__header") as AccordionItemHeader;
+  }
+
+  function getPreviousHeader(currentHeader: AccordionItemHeader): AccordionItemHeader {
+    let previous = currentHeader.parentElement.previousElementSibling;
+    while (previous) {
+      if (previous.querySelector(".accordion__item__header")) {
+        return previous.querySelector(".accordion__item__header");
+      }
+      previous = previous.previousElementSibling;
+    }
+    // Loop back to the last header if at the beginning
+    const allHeaders = accordion!.querySelectorAll(".accordion__item__header");
+    return allHeaders[allHeaders.length - 1];
+  }
+
+  accordion.addEventListener("click", handleAccordionClick);
+  accordion.addEventListener("keydown", handleKeyDown);
+</script>
