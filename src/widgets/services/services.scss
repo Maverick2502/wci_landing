@@ -36,6 +36,8 @@
     &__header {
       @include flex(row, space-between, center);
 
+      width: 100%;
+
       color: #4c4c4c;
       font-size: 34px;
       font-weight: 500;
