@@ -1,11 +1,104 @@
 ---
-import styles from "./services.module.scss";
+import "./services.scss";
 ---
 
-<section class={styles["services"]}>
-  <div class={styles["services__container"]}>
-    <div class={styles["services__container-title"]}>
+<section class="services">
+  <div class="services__container">
+    <div class="services__container-title">
       <h1>Наши услуги</h1>
+    </div>
+
+    <div class="accordion">
+      <div class="accordion__item">
+        <div class="accordion__item__header">IT-аутсорсинг</div>
+        <div class="accordion__item__body">
+          <div class="accordion__item__body__content">
+            Системы управления проектами
+            <br />
+            Системы управления задачами (Task Management Systems)
+          </div>
+        </div>
+      </div>
+
+      <div class="border"></div>
+
+      <div class="accordion__item">
+        <div class="accordion__item__header">Разработка ПО</div>
+        <div class="accordion__item__body">
+          <div class="accordion__item__body__content">
+            Системы управления проектами
+            <br />
+            Системы управления задачами (Task Management Systems)
+          </div>
+        </div>
+      </div>
+
+      <div class="border"></div>
+
+      <div class="accordion__item">
+        <div class="accordion__item__header">Решения по аутстаффингу</div>
+        <div class="accordion__item__body">
+          <div class="accordion__item__body__content">
+            Системы управления проектами
+            <br />
+            Системы управления задачами (Task Management Systems) Системы управления проектами
+            <br />
+            Системы управления задачами (Task Management Systems)
+          </div>
+        </div>
+      </div>
+
+      <div class="border"></div>
+
+      <div class="accordion__item">
+        <div class="accordion__item__header">Услуги по кибербезопасности</div>
+        <div class="accordion__item__body">
+          <div class="accordion__item__body__content">
+            Системы управления проектами
+            <br />
+            Системы управления задачами (Task Management Systems)
+          </div>
+        </div>
+      </div>
+
+      <div class="border"></div>
+
+      <div class="accordion__item">
+        <div class="accordion__item__header">Консалтинг и стратегия</div>
+        <div class="accordion__item__body">
+          <div class="accordion__item__body__content">
+            Системы управления проектами
+            <br />
+            Системы управления задачами (Task Management Systems)
+          </div>
+        </div>
+      </div>
+
+      <div class="border"></div>
     </div>
   </div>
 </section>
+
+<script>
+  const accordionItemHeaders = document.querySelectorAll(".accordion__item__header");
+
+  accordionItemHeaders.forEach(accordionItemHeader => {
+    accordionItemHeader.addEventListener("click", event => {
+      // Uncomment in case you only want to allow for the display of only one collapsed item at a time!
+
+      // const currentlyActiveAccordionItemHeader = document.querySelector(".accordion-item-header.active");
+      // if (currentlyActiveAccordionItemHeader && currentlyActiveAccordionItemHeader !== accordionItemHeader) {
+      //   currentlyActiveAccordionItemHeader.classList.toggle("active");
+      //   currentlyActiveAccordionItemHeader.nextElementSibling.style.maxHeight = 0;
+      // }
+
+      accordionItemHeader.classList.toggle("active");
+      const accordionItemBody = accordionItemHeader.nextElementSibling;
+      if (accordionItemHeader.classList.contains("active")) {
+        accordionItemBody.style.maxHeight = accordionItemBody.scrollHeight + "px";
+      } else {
+        accordionItemBody.style.maxHeight = 0;
+      }
+    });
+  });
+</script>

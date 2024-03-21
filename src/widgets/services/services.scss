@@ -1,0 +1,88 @@
+@import "../../styles/utilities/variables.scss";
+
+.services {
+  background-color: #fff;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+
+    max-width: $desktop-width;
+
+    padding: 0 20px;
+    margin: 0 auto;
+  }
+
+  &__container-title {
+    margin-top: 100px;
+    margin-bottom: 64px;
+
+    & > h1 {
+      font-size: 60px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 130%; /* 78px */
+      text-transform: uppercase;
+
+      color: $black-main-color;
+    }
+  }
+}
+
+.accordion {
+  width: 100%;
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    &__header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      color: #4c4c4c;
+      font-size: 34px;
+      font-weight: 500;
+      line-height: 130%; /* 44.2px */
+      text-transform: uppercase;
+      position: relative;
+      cursor: pointer;
+
+      &::after {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        content: "\002B";
+        position: absolute;
+        width: 100px;
+        height: 60px;
+        border-radius: 15px;
+        background-color: $blue-main-color;
+        right: 0;
+        color: #fff;
+      }
+    }
+
+    &__body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.2s ease-out;
+
+      &__content {
+      }
+    }
+  }
+}
+
+.accordion__item__header.active::after {
+  content: "\2212";
+}
+
+.border {
+  width: 100%;
+  border: 1px solid #4c4c4c;
+  margin: 32px 0;
+}
