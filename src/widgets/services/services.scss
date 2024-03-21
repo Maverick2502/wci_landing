@@ -35,6 +35,9 @@
   width: 100%;
 
   &__item {
+    padding: 30px 0;
+    border-bottom: 1px solid #4c4c4c;
+
     &__header {
       @include flex(row, space-between, center);
 
@@ -69,12 +72,5 @@
       overflow: hidden;
       transition: max-height 0.2s ease-out;
     }
-  }
-
-  &__bd {
-    width: 100%;
-    border: 1px solid #4c4c4c;
-    // Using custom values not from Figma
-    margin: 30px 0;
   }
 }

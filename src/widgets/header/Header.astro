@@ -1,6 +1,5 @@
 ---
 import logo from "@assets/icons/wci.svg";
-import Menu from "@shared/Header/Menu";
 import { Image } from "astro:assets";
 import styles from "./header.module.scss";
 ---
@@ -17,9 +16,9 @@ import styles from "./header.module.scss";
           <a data-astro-prefetch="hover" href="/"> RU</a>
         </button>
       </div>
-      <div class={styles["menu"]}>
+      <!-- <div class={styles["menu"]}>
         <Menu client:visible />
-      </div>
+      </div> -->
       <!-- <div class={styles["menu"]}>
         <button class={styles["menu__btn"]}>
           <span>
@@ -31,3 +30,5 @@ import styles from "./header.module.scss";
     </div>
   </div>
 </header>
+
+<script></script>
