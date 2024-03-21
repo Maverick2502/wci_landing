@@ -1,6 +1,7 @@
 ---
 import Layout from "@layouts/Layout.astro";
 import "@styles/index.scss";
+import Features from "@widgets/features/Features.astro";
 import Footer from "@widgets/footer/Footer.astro";
 import Header from "@widgets/header/Header.astro";
 import Hero from "@widgets/hero/Hero.astro";
@@ -18,6 +19,7 @@ changeLanguage("en");
   <main>
     <Hero />
     <Services />
+    <Features />
   </main>
   <!-- <Card client:visible /> -->
   <Footer />

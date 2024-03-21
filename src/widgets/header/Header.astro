@@ -1,7 +1,8 @@
 ---
+import menuWhite from "@assets/icons/menu_white.svg";
 import logo from "@assets/icons/wci.svg";
-import Menu from "@shared/Header/Menu";
 import { Image } from "astro:assets";
+import { t } from "i18next";
 import styles from "./header.module.scss";
 ---
 
@@ -10,21 +11,21 @@ import styles from "./header.module.scss";
     <Image class={styles["header__image"]} src={logo} alt="logo/" loading="eager" decoding="async" />
     <div class={styles["header__btns"]}>
       <div class={styles["switcher"]}>
-        <button>
-          <!-- <a data-astro-prefetch="hover" href="/en"></a> -->
-          ENG
+        <button type="button">
+          <a data-astro-prefetch="hover" href="/en">ENG</a>
         </button>
-        <button>RU</button>
+        <button type="button">
+          <a data-astro-prefetch="hover" href="/"> RU</a>
+        </button>
       </div>
-      <Menu client:visible />
-      <!-- <div class={styles["menu"]}>
+      <div class={styles["menu"]}>
         <button class={styles["menu__btn"]}>
           <span>
             {t("menu")}
           </span>
           <Image src={menuWhite} alt="menu" />
         </button>
-      </div> -->
+      </div>
     </div>
   </div>
 </header>

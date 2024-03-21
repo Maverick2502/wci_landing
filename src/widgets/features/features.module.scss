@@ -1,6 +1,6 @@
 @import "../../styles/utilities/variables.scss";
 
-.services {
+.features {
   background-color: #fff;
 
   &__container {
@@ -15,11 +15,10 @@
 
   &__container-title {
     margin-top: 100px;
-    margin-bottom: 64px;
+    margin-bottom: 50px;
 
     & > h1 {
       font-size: 60px;
-      font-style: normal;
       font-weight: 700;
       line-height: 130%; /* 78px */
       text-transform: uppercase;
@@ -27,4 +26,8 @@
       color: $black-main-color;
     }
   }
+}
+
+.border {
+  border: 1px solid #4c4c4c;
 }

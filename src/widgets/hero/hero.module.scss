@@ -20,12 +20,13 @@
     max-width: $desktop-width;
     margin: 0 auto;
 
-    padding: 56px 20px 100px;
+    padding: 50px 20px 100px;
 
     color: #fff;
 
     & > div {
       z-index: 1;
+
       & > h1 {
         font-size: 120px;
         font-weight: 700;

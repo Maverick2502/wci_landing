@@ -5,5 +5,11 @@
     "headerSecondLine": "SOLUTIONS.",
     "paragraph": "Maximize the efficiency of your IT business with our outsourcing and outstaffing services.",
     "button": "Order a service"
+  },
+  "services": {
+    "title": "Our services"
+  },
+  "features": {
+    "title": "Why us?"
   }
 }
