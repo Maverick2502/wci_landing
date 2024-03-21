@@ -80,25 +80,29 @@ import "./services.scss";
 </section>
 
 <script>
-  const accordionItemHeaders = document.querySelectorAll(".accordion__item__header");
+  const accordion = document.querySelector(".accordion");
 
-  accordionItemHeaders.forEach(accordionItemHeader => {
-    accordionItemHeader.addEventListener("click", event => {
-      // Uncomment in case you only want to allow for the display of only one collapsed item at a time!
+  function handleAccordionClick(event: Event) {
+    if (!(event.target instanceof HTMLElement)) return;
 
-      // const currentlyActiveAccordionItemHeader = document.querySelector(".accordion-item-header.active");
-      // if (currentlyActiveAccordionItemHeader && currentlyActiveAccordionItemHeader !== accordionItemHeader) {
-      //   currentlyActiveAccordionItemHeader.classList.toggle("active");
-      //   currentlyActiveAccordionItemHeader.nextElementSibling.style.maxHeight = 0;
-      // }
+    if (event.target.classList.contains("accordion__item__header")) {
+      const accordionItemHeader = event.target;
+      const accordionItemBody = accordionItemHeader.nextElementSibling as HTMLElement;
 
-      accordionItemHeader.classList.toggle("active");
-      const accordionItemBody = accordionItemHeader.nextElementSibling;
-      if (accordionItemHeader.classList.contains("active")) {
-        accordionItemBody.style.maxHeight = accordionItemBody.scrollHeight + "px";
-      } else {
-        accordionItemBody.style.maxHeight = 0;
+      // Close other open items
+      const currentlyActiveHeader = document.querySelector(".accordion__item__header.active") as HTMLElement | null;
+      if (currentlyActiveHeader && currentlyActiveHeader !== accordionItemHeader) {
+        currentlyActiveHeader.classList.remove("active");
+        currentlyActiveHeader.nextElementSibling!.style.maxHeight = "0";
       }
-    });
-  });
+
+      // Toggle the active state and adjust the height
+      accordionItemHeader.classList.toggle("active");
+      accordionItemBody.style.maxHeight = accordionItemHeader.classList.contains("active")
+        ? `${accordionItemBody.scrollHeight}px`
+        : "0";
+    }
+  }
+
+  accordion!.addEventListener("click", handleAccordionClick);
 </script>
