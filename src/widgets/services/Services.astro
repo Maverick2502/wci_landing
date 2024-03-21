@@ -95,6 +95,7 @@ import "./services.scss";
 
       <div class="accordion__item">
         <button
+          is="accordion-item-header"
           id="heading-5"
           aria-controls="collapse-5"
           aria-expanded="false"
@@ -123,79 +124,26 @@ import "./services.scss";
 
     if (event.target.classList.contains("accordion__item__header")) {
       const accordionItemHeader = event.target;
-      const accordionItemBody = accordionItemHeader.nextElementSibling as HTMLElement; // Close other open items
+      const accordionItemBody = accordionItemHeader.nextElementSibling as HTMLElement;
 
       const currentlyActiveHeader = document.querySelector(".accordion__item__header.active") as HTMLElement | null;
+
       if (currentlyActiveHeader && currentlyActiveHeader !== accordionItemHeader) {
         currentlyActiveHeader.classList.remove("active");
-        currentlyActiveHeader.setAttribute("aria-expanded", "false"); // Update aria-expanded
-        currentlyActiveHeader.nextElementSibling!.style.maxHeight = "0";
-      } // Toggle the active state and adjust the height and 'aria-expanded'
+        currentlyActiveHeader.setAttribute("aria-expanded", "false");
+
+        if (currentlyActiveHeader.nextElementSibling instanceof HTMLElement) {
+          currentlyActiveHeader.nextElementSibling.style.maxHeight = "0";
+        }
+      }
 
       accordionItemHeader.classList.toggle("active");
       const expandedState = accordionItemHeader.classList.contains("active");
-      accordionItemHeader.setAttribute("aria-expanded", expandedState);
+      accordionItemHeader.setAttribute("aria-expanded", expandedState.toString());
 
       accordionItemBody.style.maxHeight = expandedState ? `${accordionItemBody.scrollHeight}px` : "0";
     }
   }
 
   accordion!.addEventListener("click", handleAccordionClick);
-
-  interface AccordionItemHeader extends HTMLElement {
-    click(): void;
-  }
-
-  function handleKeyDown(event: KeyboardEvent) {
-    if (!(event.target instanceof HTMLElement)) return;
-
-    const closestHeader = event.target.closest(".accordion__item__header") as AccordionItemHeader | null;
-
-    if (closestHeader) {
-      switch (event.key) {
-        case "ArrowDown":
-          event.preventDefault();
-          getNextHeader(closestHeader).focus();
-          break;
-        case "ArrowUp":
-          event.preventDefault();
-          getPreviousHeader(closestHeader).focus();
-          break;
-        case " ": // Spacebar to toggle
-        case "Enter":
-          event.preventDefault();
-          closestHeader.click();
-          break;
-      }
-    }
-  }
-
-  function getNextHeader(currentHeader: AccordionItemHeader): AccordionItemHeader {
-    let nextSibling = currentHeader.parentElement.nextElementSibling as HTMLElement | null;
-
-    while (nextSibling) {
-      const header = nextSibling.querySelector(".accordion__item__header") as AccordionItemHeader | null;
-      if (header) return header;
-      nextSibling = nextSibling.nextElementSibling as HTMLElement | null;
-    }
-
-    // Loop to the first header:
-    return accordion.querySelector(".accordion__item__header") as AccordionItemHeader;
-  }
-
-  function getPreviousHeader(currentHeader: AccordionItemHeader): AccordionItemHeader {
-    let previous = currentHeader.parentElement.previousElementSibling;
-    while (previous) {
-      if (previous.querySelector(".accordion__item__header")) {
-        return previous.querySelector(".accordion__item__header");
-      }
-      previous = previous.previousElementSibling;
-    }
-    // Loop back to the last header if at the beginning
-    const allHeaders = accordion!.querySelectorAll(".accordion__item__header");
-    return allHeaders[allHeaders.length - 1];
-  }
-
-  accordion.addEventListener("click", handleAccordionClick);
-  accordion.addEventListener("keydown", handleKeyDown);
 </script>

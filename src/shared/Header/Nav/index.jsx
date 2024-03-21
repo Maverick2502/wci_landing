@@ -20,7 +20,7 @@ export default function index() {
       </div>
       <motion.div className={styles.footer}>
         {footerLinks.map((link, i) => {
-          const { title, href } = link;
+          const { title } = link;
           return (
             <motion.a variants={slideIn} custom={i} initial="initial" animate="enter" exit="exit" key={`f_${i}`}>
               {title}
