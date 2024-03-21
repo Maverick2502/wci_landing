@@ -1,4 +1,5 @@
 @import "../../styles/utilities/variables.scss";
+@import "../../styles/utilities/mixins.scss";
 
 .services {
   background-color: #fff;
@@ -19,7 +20,6 @@
 
     & > h1 {
       font-size: 60px;
-      font-style: normal;
       font-weight: 700;
       line-height: 130%; /* 78px */
       text-transform: uppercase;
@@ -33,14 +33,8 @@
   width: 100%;
 
   &__item {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-
     &__header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      @include flex(row, space-between, center);
 
       color: #4c4c4c;
       font-size: 34px;
@@ -51,34 +45,27 @@
       cursor: pointer;
 
       &::after {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        content: "\002B";
-        position: absolute;
-        width: 100px;
-        height: 60px;
+        content: url("../../assets/icons/plus.svg");
         border-radius: 15px;
         background-color: $blue-main-color;
-        right: 0;
         color: #fff;
+        width: 100px;
+        height: 60px;
+
+        @include flex();
       }
+    }
+
+    &__header.active::after {
+      content: url("../../assets/icons/minus.svg");
     }
 
     &__body {
       max-height: 0;
       overflow: hidden;
       transition: max-height 0.2s ease-out;
-
-      &__content {
-      }
     }
   }
-}
-
-.accordion__item__header.active::after {
-  content: "\2212";
 }
 
 .border {
