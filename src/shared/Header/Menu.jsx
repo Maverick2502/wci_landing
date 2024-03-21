@@ -28,8 +28,13 @@ export default function Menu() {
   const [isActive, setIsActive] = useState(false);
 
   return (
-    <div className={styles.header}>
-      <motion.div className={styles.menu} variants={menu} animate={isActive ? "open" : "closed"} initial="closed">
+    <div className={styles["header"]}>
+      <motion.div
+        className={styles["header__menu"]}
+        variants={menu}
+        animate={isActive ? "open" : "closed"}
+        initial="closed"
+      >
         <AnimatePresence>{isActive && <Nav />}</AnimatePresence>
       </motion.div>
       <Button

@@ -1,8 +1,7 @@
 ---
-import menuWhite from "@assets/icons/menu_white.svg";
 import logo from "@assets/icons/wci.svg";
+import Menu from "@shared/Header/Menu";
 import { Image } from "astro:assets";
-import { t } from "i18next";
 import styles from "./header.module.scss";
 ---
 
@@ -19,13 +18,16 @@ import styles from "./header.module.scss";
         </button>
       </div>
       <div class={styles["menu"]}>
+        <Menu client:visible />
+      </div>
+      <!-- <div class={styles["menu"]}>
         <button class={styles["menu__btn"]}>
           <span>
             {t("menu")}
           </span>
           <Image src={menuWhite} alt="menu" />
         </button>
-      </div>
+      </div> -->
     </div>
   </div>
 </header>

@@ -1,18 +1,10 @@
 export const links = [
   {
-    title: "Projects",
+    title: "Services",
     href: "/",
   },
   {
-    title: "Agency",
-    href: "/",
-  },
-  {
-    title: "Expertise",
-    href: "/",
-  },
-  {
-    title: "Careers",
+    title: "Why us?",
     href: "/",
   },
   {
