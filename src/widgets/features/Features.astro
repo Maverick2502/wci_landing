@@ -1,16 +1,61 @@
 ---
-import styles from "./features.module.scss";
+import "./features.scss";
 ---
 
-<section class={styles["features"]}>
-  <div class={styles["features__container"]}>
-    <div class={styles["features__container-title"]}>
+<section class="features">
+  <div class="features__container">
+    <div class="features__container-title">
       <h1>Почему выбрали нас?</h1>
     </div>
 
-    <div>
-      <div class={styles["border"]}></div>
-      <div class={styles["features-block"]}></div>
+    <div class="bd"></div>
+
+    <div class="features-block">
+      <ul class="features-block__list">
+        <li class="features-block__list__item">
+          <div class="features-block__list__item__left">
+            <span>01</span>
+            <p>Экспертиза</p>
+          </div>
+
+          <div class="features-block__list__item__right">
+            <p>Наша команда состоит из опытных профессионалов с обширным опытом работы в различных областях ИТ</p>
+          </div>
+        </li>
+
+        <li class="features-block__list__item">
+          <div class="features-block__list__item__left">
+            <span>02</span>
+            <p>Надежность</p>
+          </div>
+
+          <div class="features-block__list__item__right">
+            <p>Наша команда состоит из опытных профессионалов с обширным опытом работы в различных областях ИТ</p>
+          </div>
+        </li>
+
+        <li class="features-block__list__item">
+          <div class="features-block__list__item__left">
+            <span>03</span>
+            <p>Гибкость</p>
+          </div>
+
+          <div class="features-block__list__item__right">
+            <p>Наша команда состоит из опытных профессионалов с обширным опытом работы в различных областях ИТ</p>
+          </div>
+        </li>
+
+        <li class="features-block__list__item">
+          <div class="features-block__list__item__left">
+            <span>04</span>
+            <p>Инновации</p>
+          </div>
+
+          <div class="features-block__list__item__right">
+            <p>Наша команда состоит из опытных профессионалов с обширным опытом работы в различных областях ИТ</p>
+          </div>
+        </li>
+      </ul>
     </div>
   </div>
 </section>
