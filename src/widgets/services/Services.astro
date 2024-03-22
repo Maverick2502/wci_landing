@@ -1,5 +1,6 @@
 ---
 import "./services.scss";
+import Accordion from "./Accordion";
 ---
 
 <section class="services">
@@ -8,7 +9,9 @@ import "./services.scss";
       <h1>Наши услуги</h1>
     </div>
 
-    <div class="accordion">
+    <Accordion client:visible />
+
+    <!-- <div class="accordion">
       <div class="accordion__item">
         <button
           id="heading-1"
@@ -22,6 +25,10 @@ import "./services.scss";
         </button>
         <div class="accordion__item__body" id="collapse-1" aria-labelledby="heading-1">
           <div class="accordion__item__body__content">
+            <p>Системы управления проектами</p>
+            <p>Системы управления проектами</p>
+            <p>Системы управления проектами</p>
+            <p>Системы управления проектами</p>
             <p>Системы управления проектами</p>
             <p>Системы управления задачами (Task Management Systems)</p>
           </div>
@@ -104,10 +111,10 @@ import "./services.scss";
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
   </div>
 </section>
-
+<!-- 
 <script>
   const accordion = document.querySelector(".accordion") as HTMLElement;
 
@@ -138,4 +145,4 @@ import "./services.scss";
   }
 
   accordion!.addEventListener("click", handleAccordionClick);
-</script>
+</script> -->
