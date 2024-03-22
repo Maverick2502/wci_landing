@@ -3,6 +3,7 @@ import logo from "@assets/icons/wci.svg";
 import { Image } from "astro:assets";
 import "./header.scss";
 import Menu from "@shared/Header/Menu";
+const isActive = (path: string) => Astro.url.pathname === path || Astro.url.pathname.startsWith(path + "/");
 ---
 
 <header class="header">
@@ -10,20 +11,21 @@ import Menu from "@shared/Header/Menu";
     <Image class="header__image" src={logo} alt="Website Name Logo" loading="eager" decoding="async" />
     <div class="header__btns">
       <div class="switcher">
-        <a data-astro-prefetch="hover" href="/en" aria-label="English">ENG</a>
-        <a data-astro-prefetch="hover" href="/" aria-label="Russian"> RU</a>
+        <a
+          href="/en"
+          aria-label="English"
+          data-astro-prefetch="hover"
+          class:list={["btn", { active: isActive("/en") }]}
+        >
+          ENG
+        </a>
+        <a href="/" aria-label="Russian" data-astro-prefetch="hover" class:list={["btn", { active: isActive("/") }]}>
+          RU
+        </a>
       </div>
       <div class="menu">
         <Menu client:visible />
       </div>
-      <!-- <div class={styles["menu"]}>
-        <button class={styles["menu__btn"]}>
-          <span>
-            {t("menu")}
-          </span>
-          <Image src={menuWhite} alt="menu" />
-        </button>
-      </div> -->
     </div>
   </div>
 </header>
