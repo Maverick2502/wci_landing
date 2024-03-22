@@ -16,17 +16,11 @@ changeLanguage("ru");
 
 <Layout title="Welcome to Astro.">
   <Header />
-
-  <!-- <LanguageSelector /> -->
-
   <main>
     <Hero />
-    <Services />
+    <Services client:visible />
     <Features />
     <ContactUs />
   </main>
-
-  <!-- <Card client:visible /> -->
-
   <Footer />
 </Layout>
