@@ -109,33 +109,33 @@ import "./services.scss";
 </section>
 
 <script>
-  const accordion = document.querySelector(".accordion") as HTMLElement;
+  // const accordion = document.querySelector(".accordion") as HTMLElement;
 
-  function handleAccordionClick(event: Event) {
-    if (!(event.target instanceof HTMLElement)) return;
+  // function handleAccordionClick(event: Event) {
+  //   if (!(event.target instanceof HTMLElement)) return;
 
-    if (event.target.classList.contains("accordion__item__header")) {
-      const accordionItemHeader = event.target;
-      const accordionItemBody = accordionItemHeader.nextElementSibling as HTMLElement;
+  //   if (event.target.classList.contains("accordion__item__header")) {
+  //     const accordionItemHeader = event.target;
+  //     const accordionItemBody = accordionItemHeader.nextElementSibling as HTMLElement;
 
-      const currentlyActiveHeader = document.querySelector(".accordion__item__header.active") as HTMLElement | null;
+  //     const currentlyActiveHeader = document.querySelector(".accordion__item__header.active") as HTMLElement | null;
 
-      if (currentlyActiveHeader && currentlyActiveHeader !== accordionItemHeader) {
-        currentlyActiveHeader.classList.remove("active");
-        currentlyActiveHeader.setAttribute("aria-expanded", "false");
+  //     if (currentlyActiveHeader && currentlyActiveHeader !== accordionItemHeader) {
+  //       currentlyActiveHeader.classList.remove("active");
+  //       currentlyActiveHeader.setAttribute("aria-expanded", "false");
 
-        if (currentlyActiveHeader.nextElementSibling instanceof HTMLElement) {
-          currentlyActiveHeader.nextElementSibling.style.maxHeight = "0";
-        }
-      }
+  //       if (currentlyActiveHeader.nextElementSibling instanceof HTMLElement) {
+  //         currentlyActiveHeader.nextElementSibling.style.maxHeight = "0";
+  //       }
+  //     }
 
-      accordionItemHeader.classList.toggle("active");
-      const expandedState = accordionItemHeader.classList.contains("active");
-      accordionItemHeader.setAttribute("aria-expanded", expandedState.toString());
+  //     accordionItemHeader.classList.toggle("active");
+  //     const expandedState = accordionItemHeader.classList.contains("active");
+  //     accordionItemHeader.setAttribute("aria-expanded", expandedState.toString());
 
-      accordionItemBody.style.maxHeight = expandedState ? `${accordionItemBody.scrollHeight}px` : "0";
-    }
-  }
+  //     accordionItemBody.style.maxHeight = expandedState ? `${accordionItemBody.scrollHeight}px` : "0";
+  //   }
+  // }
 
-  accordion!.addEventListener("click", handleAccordionClick);
+  // accordion!.addEventListener("click", handleAccordionClick);
 </script>

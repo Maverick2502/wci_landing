@@ -2,6 +2,7 @@
 import logo from "@assets/icons/wci.svg";
 import { Image } from "astro:assets";
 import "./header.scss";
+import Menu from "@shared/Header/Menu";
 ---
 
 <header class="header">
@@ -12,9 +13,9 @@ import "./header.scss";
         <a data-astro-prefetch="hover" href="/en" aria-label="English">ENG</a>
         <a data-astro-prefetch="hover" href="/" aria-label="Russian"> RU</a>
       </div>
-      <!-- <div class={styles["menu"]}>
+      <div class="menu">
         <Menu client:visible />
-      </div> -->
+      </div>
       <!-- <div class={styles["menu"]}>
         <button class={styles["menu__btn"]}>
           <span>
