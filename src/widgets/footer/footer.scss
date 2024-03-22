@@ -7,10 +7,25 @@
     max-width: $desktop-width;
     margin: 0 auto;
 
-    padding: 0 20px;
+    padding: 100px 20px;
+  }
 
-    & > h1 {
-      color: #fff;
+  &__nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    &__list {
+      display: flex;
+      gap: 32px;
+
+      &__item {
+        color: $grey-color;
+        // font-family: "SF Pro";
+        font-size: 16px;
+        font-weight: 510;
+        line-height: 100%;
+      }
     }
   }
 }

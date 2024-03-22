@@ -1,11 +1,13 @@
 ---
 import { t } from "i18next";
 import styles from "./hero.module.scss";
+import { Image } from "astro:assets";
+import wciim from "@assets/images/wci_hero.png";
 ---
 
 <section class={styles["hero"]}>
   <div class={styles["hero__container"]}>
-    <!-- <Image class={styles["hero__image"]} src={wciim} alt="logo/" loading="eager" decoding="async" /> -->
+    <Image class={styles["hero__image"]} src={wciim} alt="logo/" loading="eager" decoding="async" />
     <div>
       <h1>
         {t("hero.headerFirstLine")}

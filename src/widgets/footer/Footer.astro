@@ -2,8 +2,35 @@
 import "./footer.scss";
 ---
 
-<footer class="footer">
+<footer class="footer" role="contentinfo">
   <div class="footer__container">
-    <h1>FOOTER</h1>
+    <nav class="footer__nav" role="navigation">
+      <ul class="footer__nav__list">
+        <li class="footer__nav__list__item">
+          <a href="cookies">Cookies Policy</a>
+        </li>
+        <li class="footer__nav__list__item">
+          <a href="legal">Legal Terms</a>
+        </li>
+        <li class="footer__nav__list__item">
+          <a href="privacy-policy">Privacy Policy</a>
+        </li>
+      </ul>
+
+      <ul class="footer__nav__list">
+        <li class="footer__nav__list__item">
+          <a href="" aria-label="LinkedIn">LinkedIn</a>
+        </li>
+        <li class="footer__nav__list__item">
+          <a href="" aria-label="Facebook">Facebook</a>
+        </li>
+        <li class="footer__nav__list__item">
+          <a href="" aria-label="Instagram">Instagram</a>
+        </li>
+        <li class="footer__nav__list__item">
+          <a href="" aria-label="Behance">Behance</a>
+        </li>
+      </ul>
+    </nav>
   </div>
 </footer>

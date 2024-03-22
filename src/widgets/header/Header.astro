@@ -9,12 +9,8 @@ import styles from "./header.module.scss";
     <Image class={styles["header__image"]} src={logo} alt="logo/" loading="eager" decoding="async" />
     <div class={styles["header__btns"]}>
       <div class={styles["switcher"]}>
-        <button type="button">
-          <a data-astro-prefetch="hover" href="/en">ENG</a>
-        </button>
-        <button type="button">
-          <a data-astro-prefetch="hover" href="/"> RU</a>
-        </button>
+        <a data-astro-prefetch="hover" href="/en">ENG</a>
+        <a data-astro-prefetch="hover" href="/"> RU</a>
       </div>
       <!-- <div class={styles["menu"]}>
         <Menu client:visible />
