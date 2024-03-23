@@ -1,15 +1,15 @@
-interface AccordionData {
+export interface AccordionData {
   title: string;
   content: {
     name: string;
   }[];
 }
 
-interface AccordionContextType {
+export interface AccordionContextType {
   data: AccordionData[];
 }
 
-interface AccordionItemProps {
+export interface AccordionItemProps {
   title: string;
   content: {
     name: string;
@@ -18,6 +18,4 @@ interface AccordionItemProps {
   onToggle: () => void;
 }
 
-type UseAccordionResult = [number | null, (index: number) => void];
-
-export type { AccordionContextType, AccordionData, AccordionItemProps, UseAccordionResult };
+export type UseAccordionResult = [number | null, (index: number) => void];

@@ -1,0 +1,43 @@
+.nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  // padding: 100px 40px 50px 40px;
+  padding: 126px 40px 38px 40px;
+  height: 100%;
+  box-sizing: border-box;
+
+  .body {
+    display: flex;
+    // gap: 10px;
+    gap: 36px;
+    flex-direction: column;
+
+    // .linkContainer {
+    //   perspective: 120px;
+    //   perspective-origin: bottom;
+    // }
+    a {
+      font-size: 36px;
+      font-style: normal;
+      font-weight: 590;
+      line-height: 100%;
+      color: #4c4c4c;
+    }
+  }
+  .footer {
+    // display: flex;
+    // flex-wrap: wrap;
+
+    display: flex;
+
+    a {
+      color: #8c8c8c;
+      width: 50%;
+      margin-top: 5px;
+      font-size: 16px;
+      font-weight: 510;
+      line-height: 100%;
+    }
+  }
+}

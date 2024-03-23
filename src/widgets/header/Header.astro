@@ -1,8 +1,8 @@
 ---
 import logo from "@assets/icons/wci.svg";
+import NavigationMenu from "@shared/navigationMenu/components";
 import { Image } from "astro:assets";
 import "./header.scss";
-import Menu from "@shared/Header/Menu";
 const isActive = (path: string) => Astro.url.pathname === path || Astro.url.pathname.startsWith(path + "/");
 ---
 
@@ -24,7 +24,8 @@ const isActive = (path: string) => Astro.url.pathname === path || Astro.url.path
         </a>
       </div>
       <div class="menu">
-        <Menu client:visible />
+        <!-- <Menu client:visible /> -->
+        <NavigationMenu client:visible />
       </div>
     </div>
   </div>
