@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
-import "./button.scss";
 import type { ButtonProps } from "../utils/types";
+import "./button.scss";
 
 function Button({ isActive, toggleMenu }: ButtonProps) {
   return (

@@ -1,33 +1,28 @@
-import styles from "./menu.module.scss";
 import { motion } from "framer-motion";
-import { footerLinks, links } from "../utils/constant";
 import { perspective, slideIn } from "../utils/anim";
+import { footerLinks, links } from "../utils/constant";
+import "./menu.scss";
 
-export default function Menu() {
+function Menu() {
   return (
-    <div className={styles.nav}>
-      <div className={styles.body}>
-        {links.map((link, i) => {
-          const { title, href } = link;
-          return (
-            <div key={`b_${i}`} className={styles.linkContainer}>
-              <motion.div custom={i} variants={perspective} initial="initial" animate="enter" exit="exit">
-                <a>{title}</a>
-              </motion.div>
-            </div>
-          );
-        })}
-      </div>
-      <motion.div className={styles.footer}>
-        {footerLinks.map((link, i) => {
-          const { title } = link;
-          return (
-            <motion.a variants={slideIn} custom={i} initial="initial" animate="enter" exit="exit" key={`f_${i}`}>
-              {title}
-            </motion.a>
-          );
-        })}
-      </motion.div>
+    <div className="menu-nav">
+      <ul className="menu-nav__list">
+        {links.map(({ href, title }, i) => (
+          <motion.li key={i} custom={i} variants={perspective} initial="initial" animate="enter" exit="exit">
+            <a href={href}>{title}</a>
+          </motion.li>
+        ))}
+      </ul>
+
+      <ul className="menu-nav__socials">
+        {footerLinks.map(({ href, title }, i) => (
+          <motion.li key={i} custom={i} variants={slideIn} initial="initial" animate="enter" exit="exit">
+            <a href={href}>{title}</a>
+          </motion.li>
+        ))}
+      </ul>
     </div>
   );
 }
+
+export { Menu };

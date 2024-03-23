@@ -1,8 +1,8 @@
-import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import { useState } from "react";
 import { Button } from "./Button";
+import { Menu } from "./Menu";
 import styles from "./styles.module.scss";
-import Menu from "./Menu";
 
 const menu = {
   open: {
