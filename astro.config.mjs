@@ -8,7 +8,6 @@ import tailwind from "@astrojs/tailwind";
 // https://astro.build/config
 export default defineConfig({
   integrations: [astroI18next(), react(), tailwind()],
-  prefetch: true,
   vite: {
     plugins: [
       VitePluginFonts({
