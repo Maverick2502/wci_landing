@@ -55,27 +55,3 @@
   background-color: #fff;
   color: $blue-main-color;
 }
-
-.menu {
-  width: 138px;
-  height: 60px;
-  border-radius: $btn-border-radius-xl;
-  background-color: #fff;
-
-  &__btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-
-    height: 100%;
-    width: 100%;
-
-    background-color: transparent;
-
-    font-size: 18px;
-    font-weight: 700;
-
-    cursor: pointer;
-  }
-}
