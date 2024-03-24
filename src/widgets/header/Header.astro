@@ -8,16 +8,34 @@ const isActive = (path: string) => Astro.url.pathname === path || Astro.url.path
 
 <header class="header">
   <div class="header__container">
-    <Image class="header__image" src={logo} alt="Website Name Logo" loading="eager" decoding="async" />
+    <Image
+      height={50}
+      width={120}
+      format="svg"
+      class="header__image"
+      src={logo}
+      alt="Website Name Logo"
+      loading="eager"
+      decoding="async"
+    />
 
-    <div class="header__btns">
-      <div class="switcher">
-        <a href="/en" aria-label="English" class:list={["btn", { active: isActive("/en") }]}>EN</a>
-        <a href="/" aria-label="Russian" class:list={["btn", { active: isActive("/") }]}>RU</a>
+    <div class="header__btn-groups">
+      <div class="language-switcher">
+        <a
+          href="/en"
+          aria-label="English"
+          class:list={["language-switcher__switcher", { ["language-switcher__switcher-active"]: isActive("/en") }]}
+        >
+          EN
+        </a>
+        <a
+          href="/"
+          aria-label="Russian"
+          class:list={["language-switcher__switcher", { ["language-switcher__switcher-active"]: isActive("/") }]}>RU</a
+        >
       </div>
-      <NavigationMenu client:visible />
+
+      <NavigationMenu client:load />
     </div>
   </div>
 </header>
-
-<script></script>
