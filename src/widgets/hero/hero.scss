@@ -20,6 +20,7 @@
   }
 
   &__image {
+    will-change: transform;
     position: absolute;
     object-fit: cover;
     top: -70px;

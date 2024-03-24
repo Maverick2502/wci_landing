@@ -5,7 +5,7 @@ import { Image } from "astro:assets";
 import wciim from "@assets/images/wci_hero.png";
 ---
 
-<section class="hero">
+<section class="hero" role="banner">
   <Image class="hero__image" src={wciim} alt="Logo" loading="eager" decoding="async" />
   <div class="hero__container">
     <div class="hero__content">
@@ -26,3 +26,18 @@ import wciim from "@assets/images/wci_hero.png";
     </div>
   </div>
 </section>
+
+<script>
+  document.addEventListener("astro:page-load", () => {
+    const heroImage = document.querySelector(".hero__image") as HTMLElement;
+    function updateParallax() {
+      const scrollY = window.scrollY;
+      const bgPos = -scrollY * 0.3;
+      heroImage.style.transform = `translateY(${bgPos}px)`;
+
+      requestAnimationFrame(updateParallax); // Recursive for continuous updates
+    }
+
+    requestAnimationFrame(updateParallax); // Start the animation loop
+  });
+</script>
