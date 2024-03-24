@@ -5,7 +5,6 @@
     "paths": {
       "@assets/*": ["./assets/*"],
       "@shared/*": ["./shared/*"],
-      "@shadcn/*": ["./shared/shadcn/*"],
       "@widgets/*": ["./widgets/*"],
       "@layouts/*": ["./layouts/*"],
       "@pages/*": ["./pages/*"],

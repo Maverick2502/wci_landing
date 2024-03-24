@@ -1,5 +1,6 @@
-import React, { createContext, useContext, useEffect, useRef, useState, type ElementRef } from "react";
+import { useEffect, useRef, type ElementRef } from "react";
 import type { AccordionItemProps } from "../utils/accordion.model";
+import "./accordion.scss";
 
 const AccordionItem = ({ title, content, isActive, onToggle }: AccordionItemProps) => {
   const contentRef = useRef<ElementRef<"ul">>(null);
