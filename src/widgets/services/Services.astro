@@ -2,13 +2,12 @@
 import Accordion from "@shared/accordion/components";
 import "./services.scss";
 import { accordionData } from "./data";
+import ParallaxText from "@shared/parallaxText/components/index";
 ---
 
 <section class="services">
+  <ParallaxText client:visible headerTitle="Наши услуги" />
   <div class="services__container">
-    <div id="services" class="services__container-title">
-      <h1>Наши услуги</h1>
-    </div>
     <Accordion data={accordionData} client:visible />
   </div>
 </section>
