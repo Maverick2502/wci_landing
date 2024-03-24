@@ -4,23 +4,20 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
-    "start": "astro dev",
     "build": "astro check && astro build",
     "preview": "astro preview",
-    "astro": "astro",
-    "prepare": "husky install",
-    "i18n:generate": "astro-i18next generate",
-    "husky": {
-      "hooks": {
-        "pre-commit": "lint-staged"
-      }
-    }
+    "format": "prettier --write .",
+    "prepare": "husky install"
   },
   "lint-staged": {
-    "*.{astro,ts, tsx}": [
-      "prettier --write ./src"
-    ],
-    "*.{md,html,scss,json}": "prettier --write"
+    "*.{astro,ts,tsx,md,html,scss,json}": [
+      "npm run format"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint"
+    }
   },
   "dependencies": {
     "@astrojs/check": "^0.5.7",
