@@ -3,6 +3,7 @@ import logo from "@assets/icons/wci.svg";
 import NavigationMenu from "@shared/navigationMenu/components";
 import { Image } from "astro:assets";
 import "./header.scss";
+
 const isActive = (path: string) => Astro.url.pathname === path || Astro.url.pathname.startsWith(path + "/");
 ---
 

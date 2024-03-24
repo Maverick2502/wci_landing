@@ -7,6 +7,9 @@
   &__container {
     @include flex(row, space-between, center);
 
+    position: relative;
+    z-index: 2;
+
     width: 100%;
     max-width: $desktop-width;
 
