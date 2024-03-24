@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro check && astro build",
+    "build": "astro-i18next generate && astro check && astro build",
     "preview": "astro preview",
     "astro": "astro",
     "prepare": "husky install",
@@ -45,7 +45,6 @@
     "lint-staged": "^11.2.3",
     "prettier": "^3.2.5",
     "prettier-plugin-astro": "^0.13.0",
-    "sass": "^1.71.1",
-    "vite-plugin-fonts": "^0.7.0"
+    "sass": "^1.71.1"
   }
 }
