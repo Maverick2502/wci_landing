@@ -6,7 +6,7 @@ import ParallaxText from "@shared/parallaxText/components/index";
 ---
 
 <section class="services">
-  <ParallaxText client:visible headerTitle="Наши услуги" />
+  <ParallaxText client:load headerTitle="Наши услуги" />
   <div class="services__container">
     <Accordion data={accordionData} client:visible />
   </div>
