@@ -20,15 +20,9 @@ const { title } = Astro.props;
     <HeadHrefLangs />
     <ViewTransitions />
     <title>{title}</title>
-    <script is:inline src="/scripts/lenis.js"></script>
-    <script is:inline>
-      const lenis = new Lenis({ smooth: true, smoothTouch: false });
-      function raf(time) {
-        lenis.raf(time);
-        requestAnimationFrame(raf);
-      }
-      requestAnimationFrame(raf);
-    </script>
+    <script is:inline src="/scripts/vendor/lenis.js"></script>
+    <script is:inline src="/scripts/vendor/lenis-setup.js"></script>
+    <script is:inline src="./scripts/custom/update-favicon.js"></script>
   </head>
   <body>
     <slot />
