@@ -16,6 +16,8 @@ interface ParallaxProps {
 }
 
 const BASE_VELOCITY = 3;
+const MOVE_BY = 4000;
+// const MOVE_BY = 2000
 
 function ParallaxText({ headerTitle }: ParallaxProps) {
   const baseX = useMotionValue(0);
@@ -38,7 +40,7 @@ function ParallaxText({ headerTitle }: ParallaxProps) {
 
   const directionFactor = useRef<number>(1);
   useAnimationFrame((_, delta) => {
-    let moveBy = directionFactor.current * BASE_VELOCITY * (delta / 2000);
+    let moveBy = directionFactor.current * BASE_VELOCITY * (delta / MOVE_BY);
 
     /**
      * This is what changes the direction of the scroll once we

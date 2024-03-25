@@ -1,5 +1,6 @@
 import { useEffect, useRef, type ElementRef } from "react";
 import type { AccordionItemProps } from "../utils/accordion.model";
+import { motion } from "framer-motion";
 import "./accordion.scss";
 
 const AccordionItem = ({ title, content, isActive, onToggle }: AccordionItemProps) => {
@@ -14,7 +15,8 @@ const AccordionItem = ({ title, content, isActive, onToggle }: AccordionItemProp
 
   return (
     <div className="accordion__item">
-      <button
+      <motion.button
+        whileTap={{ scale: 0.99 }}
         id={`heading-${title.toLowerCase().replace(" ", "-")}`}
         aria-controls={`collapse-${title.toLowerCase().replace(" ", "-")}`}
         aria-expanded={isActive}
@@ -24,7 +26,7 @@ const AccordionItem = ({ title, content, isActive, onToggle }: AccordionItemProp
         onClick={onToggle}
       >
         {title}
-      </button>
+      </motion.button>
       <ul
         className="accordion__item__body"
         id={`collapse-${title.toLowerCase().replace(" ", "-")}`}
