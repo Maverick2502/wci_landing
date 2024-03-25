@@ -1,14 +1,15 @@
 ---
+import wciim from "@assets/images/wci_hero.png";
+import { Image } from "astro:assets";
+import { fade } from "astro:transitions";
 import { t } from "i18next";
 import "./hero.scss";
-import { Image } from "astro:assets";
-import wciim from "@assets/images/wci_hero.png";
 ---
 
 <section class="hero" role="banner">
   <Image class="hero__image" src={wciim} alt="Logo" loading="eager" decoding="async" />
   <div class="hero__container">
-    <div class="hero__content">
+    <div transition:animate={fade({ duration: "1s" })} class="hero__content">
       <h1>
         {t("hero.headerFirstLine")}
       </h1>
