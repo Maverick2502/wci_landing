@@ -16,17 +16,20 @@
     padding-top: 55px;
     padding-left: 20px;
     padding-right: 20px;
-    padding-bottom: 115px;
+    padding-bottom: 110px;
   }
 
   &__image {
-    will-change: transform;
     position: absolute;
-    object-fit: cover;
+    object-fit: contain;
+
     top: -70px;
     left: 0;
+
+    opacity: 0.6;
     height: 100%;
     width: 100%;
+
     z-index: 1;
   }
 
