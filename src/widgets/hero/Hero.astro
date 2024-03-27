@@ -2,7 +2,7 @@
 import wciim from "@assets/images/wci_hero.webp";
 import wciim_crop from "@assets/images/wciim_fh_crop.png";
 import { Image } from "astro:assets";
-import { fade } from "astro:transitions";
+import { fade, slide } from "astro:transitions";
 import { t } from "i18next";
 import "./hero.scss";
 ---
@@ -10,7 +10,7 @@ import "./hero.scss";
 <section class="hero" role="banner">
   <Image class="hero__image" src={wciim} alt="Logo" loading="eager" decoding="async" />
   <div class="hero__container">
-    <div transition:animate={fade({ duration: "1s" })} class="hero__content">
+    <div transition:animate={slide({ duration: "1.2s" })} class="hero__content">
       <h1>
         {t("hero.headerFirstLine")}
       </h1>
