@@ -1,42 +1,27 @@
 ---
 import { Image } from "astro:assets";
 import "./contactUs.scss";
-import contactUs from "@assets/images/contactUs.svg";
+import contactUs from "@assets/icons/export.svg";
 ---
 
 <section class="contactUs">
   <div class="contactUs__container">
-    <div class="contactUs-card">
-      <div class="contactUs-card__left">
-        <div class="contactUs-card__left__content">
-          <h1>Let's connect and explore opportunities!</h1>
-          <Image src={contactUs} alt="Contact us" />
-        </div>
-      </div>
-
-      <div id="contact" class="contactUs-card__right">
-        <div class="contactUs-card__right__content">
-          <h1>Say hello:)</h1>
-
-          <form class="form">
-            <label class="visually-hidden" for="fullName">Fullname*:</label>
-            <input id="fullName" class="form__input" type="text" name="userFullName" placeholder="Fullname*" required />
-
-            <div class="form__inputs-group">
-              <label class="visually-hidden" for="email">Email*:</label>
-              <input id="email" class="form__input" type="email" name="userEmail" placeholder="Email*" required />
-
-              <label class="visually-hidden" for="phone">Phone*:</label>
-              <input id="phone" class="form__input" type="tel" name="userPhone" placeholder="Phone*" required />
-            </div>
-
-            <label class="visually-hidden" for="message">Message*:</label>
-            <textarea id="message" class="form__input" name="userMessage" placeholder="Message*" required></textarea>
-
-            <button class="form__submitBtn" type="submit">Send</button>
-          </form>
-        </div>
-      </div>
+    <div class="h-block">
+      <h1>let’s talk</h1>
+      <Image src={contactUs} alt="contactUs" />
     </div>
+
+    <form class="form">
+      <label class="visually-hidden" for="fullName">NAME*:</label>
+      <input id="fullName" class="form__input" type="text" name="userFullName" placeholder="NAME*" required />
+
+      <label class="visually-hidden" for="email">Email*:</label>
+      <input id="email" class="form__input" type="email" name="userEmail" placeholder="EMAIL*" required />
+
+      <label class="visually-hidden" for="message">Message*:</label>
+      <textarea id="message" class="form__input" name="userMessage" placeholder="MESSAGE*" required></textarea>
+
+      <button class="form__submitBtn" type="submit">Send</button>
+    </form>
   </div>
 </section>
