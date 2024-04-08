@@ -2,37 +2,43 @@
 import logo from "@assets/icons/wci.svg";
 import NavigationMenu from "@shared/navigationMenu/components";
 import { Image } from "astro:assets";
-import "./header.scss";
+import classes from "./header.module.scss";
 
 const isActive = (path: string) => Astro.url.pathname === path || Astro.url.pathname.startsWith(path + "/");
 ---
 
-<header class="header">
-  <div class="header__container">
+<header class={classes["header"]}>
+  <div class={classes["header__container"]}>
     <Image
       height={50}
       width={120}
       format="svg"
-      class="header__image"
+      class={classes["header__image"]}
       src={logo}
       alt="Website Name Logo"
       loading="eager"
       decoding="async"
     />
 
-    <div class="header__btn-groups">
-      <div class="language-switcher">
+    <div class={classes["header__btn-groups"]}>
+      <div class={classes["language-switcher"]}>
         <a
           href="/en"
           aria-label="English"
-          class:list={["language-switcher__switcher", { ["language-switcher__switcher-active"]: isActive("/en") }]}
+          class:list={[
+            classes["language-switcher__switcher"],
+            { [classes["language-switcher__switcher-active"]]: isActive("/en") },
+          ]}
         >
           EN
         </a>
         <a
           href="/"
           aria-label="Russian"
-          class:list={["language-switcher__switcher", { ["language-switcher__switcher-active"]: isActive("/") }]}>RU</a
+          class:list={[
+            classes["language-switcher__switcher"],
+            { [classes["language-switcher__switcher-active"]]: isActive("/") },
+          ]}>RU</a
         >
       </div>
       <NavigationMenu client:load />

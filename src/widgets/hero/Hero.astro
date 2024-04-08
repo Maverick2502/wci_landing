@@ -3,13 +3,13 @@ import wciim from "@assets/images/wci_hero.webp";
 import { Image } from "astro:assets";
 import { slide } from "astro:transitions";
 import { t } from "i18next";
-import "./hero.scss";
+import classes from "./hero.module.scss";
 ---
 
-<section class="hero" role="banner">
-  <Image class="hero__image" src={wciim} alt="Logo" loading="eager" decoding="async" />
-  <div class="hero__container">
-    <div transition:animate={slide({ duration: "1.2s" })} class="hero__content">
+<section class={classes["hero"]} role="banner">
+  <Image id="hero__image" class={classes["hero__image"]} src={wciim} alt="Logo" loading="eager" decoding="async" />
+  <div class={classes["hero__container"]}>
+    <div transition:animate={slide({ duration: "1.2s" })} class={classes["hero__content"]}>
       <h1>
         {t("hero.headerFirstLine")}
       </h1>
@@ -30,7 +30,7 @@ import "./hero.scss";
 
 <script>
   document.addEventListener("astro:page-load", () => {
-    const heroImage = document.querySelector(".hero__image") as HTMLElement;
+    const heroImage = document.querySelector("#hero__image") as HTMLElement;
     function updateParallax() {
       const scrollY = window.scrollY;
       const bgPos = -scrollY * 0.3;
