@@ -42,7 +42,7 @@
       font-weight: 700;
       line-height: 130%; /* 156px */
       text-transform: uppercase;
-
+      font-family: "Geologica Variable", sans-serif;
       color: #fff;
       margin: 0 0 16px 0;
       margin: 0;
@@ -52,8 +52,9 @@
       font-size: 32px;
       font-weight: 400;
       line-height: 130%; /* 41.6px */
+      font-family: "Inter Variable", sans-serif;
 
-      max-width: 770px;
+      // max-width: 770px;
 
       color: #fff;
 
@@ -70,6 +71,7 @@
       font-size: 24px;
       font-weight: 700;
       line-height: 130%;
+      font-family: "Geologica Variable", sans-serif;
       color: $black-main-color;
 
       background-color: #fff;
