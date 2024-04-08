@@ -7,7 +7,16 @@ import classes from "./hero.module.scss";
 ---
 
 <section class={classes["hero"]} role="banner">
-  <Image id="hero__image" class={classes["hero__image"]} src={wciim} alt="Logo" loading="eager" decoding="async" />
+  <Image
+    width={1528}
+    height={833}
+    id="hero__image"
+    class={classes["hero__image"]}
+    src={wciim}
+    alt="Logo"
+    loading="eager"
+    decoding="async"
+  />
   <div class={classes["hero__container"]}>
     <div transition:animate={slide({ duration: "1.2s" })} class={classes["hero__content"]}>
       <h1>

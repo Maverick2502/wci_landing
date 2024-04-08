@@ -1,59 +1,49 @@
 ---
+import globe from "@assets/images/globe.webp";
+import handshake from "@assets/images/handshake.webp";
+import silver_brain from "@assets/images/silver_brain.webp";
+import silver_shield from "@assets/images/silver_shield.webp";
 import ParallaxText from "@shared/parallaxText/components";
-import "./features.scss";
+import { Image } from "astro:assets";
+import { t } from "i18next";
+import classes from "./features.module.scss";
 ---
 
-<section class="features">
+<section class={classes["features"]}>
   <ParallaxText client:load headerTitle="Почему выбрали нас?" />
-  <div class="features__container">
-    <div class="bd"></div>
+  <div class={classes["features__container"]}>
+    <div class={classes["card-container"]}>
+      <div class={classes["card"]}>
+        <div class={classes["card__flex"]}>
+          <Image class={classes["card__img"]} src={silver_brain} alt="expertise" />
+          <h2 class={classes["card__title"]}>{t("features.card.title")}</h2>
+          <span class={classes["card__description"]}>{t("features.card.description")}</span>
+        </div>
+      </div>
 
-    <div class="features-block">
-      <ul class="features-block__list">
-        <li class="features-block__list__item">
-          <div class="features-block__list__item__left">
-            <span>01</span>
-            <p>Экспертиза</p>
-          </div>
+      <div class={classes["card"]}>
+        <div class={classes["card__flex"]}>
+          <Image class={classes["card__img"]} src={globe} alt="expertise" />
+          <h2 class={classes["card__title"]}>{t("features.card.title")}</h2>
+          <span class={classes["card__description"]}>{t("features.card.description")}</span>
+        </div>
+      </div>
 
-          <div class="features-block__list__item__right">
-            <p>Наша команда состоит из опытных профессионалов с обширным опытом работы в различных областях ИТ</p>
-          </div>
-        </li>
+      <div class={classes["card"]}>
+        <div class={classes["card__flex"]}>
+          <Image class={classes["card__img"]} src={handshake} alt="expertise" />
+          <h2 class={classes["card__title"]}>{t("features.card.title")}</h2>
+          <span class={classes["card__description"]}>{t("features.card.description")}</span>
+        </div>
+      </div>
 
-        <li class="features-block__list__item">
-          <div class="features-block__list__item__left">
-            <span>02</span>
-            <p>Надежность</p>
-          </div>
-
-          <div class="features-block__list__item__right">
-            <p>Наша команда состоит из опытных профессионалов с обширным опытом работы в различных областях ИТ</p>
-          </div>
-        </li>
-
-        <li class="features-block__list__item">
-          <div class="features-block__list__item__left">
-            <span>03</span>
-            <p>Гибкость</p>
-          </div>
-
-          <div class="features-block__list__item__right">
-            <p>Наша команда состоит из опытных профессионалов с обширным опытом работы в различных областях ИТ</p>
-          </div>
-        </li>
-
-        <li class="features-block__list__item">
-          <div class="features-block__list__item__left">
-            <span>04</span>
-            <p>Инновации</p>
-          </div>
-
-          <div class="features-block__list__item__right">
-            <p>Наша команда состоит из опытных профессионалов с обширным опытом работы в различных областях ИТ</p>
-          </div>
-        </li>
-      </ul>
+      <div class={classes["card"]}>
+        <div class={classes["card__flex"]}>
+          <Image class={classes["card__img"]} src={silver_shield} alt="expertise" />
+          <h2 class={classes["card__title"]}>{t("features.card.title")}</h2>
+          <span class={classes["card__description"]}>{t("features.card.description")}</span>
+        </div>
+      </div>
     </div>
   </div>
 </section>

@@ -1,9 +1,7 @@
 ---
 import Layout from "@layouts/Layout.astro";
 import "@styles/index.scss";
-import ContactUs from "@widgets/contactUs/ContactUs.astro";
 import Features from "@widgets/features/Features.astro";
-import Footer from "@widgets/footer/Footer.astro";
 import Header from "@widgets/header/Header.astro";
 import Hero from "@widgets/hero/Hero.astro";
 import Services from "@widgets/services/Services.astro";
@@ -17,9 +15,9 @@ changeLanguage("en");
   <Header />
   <main>
     <Hero />
-    <Services />
     <Features />
-    <ContactUs />
+    <Services />
+    <!-- <ContactUs /> -->
   </main>
-  <Footer />
+  <!-- <Footer /> -->
 </Layout>

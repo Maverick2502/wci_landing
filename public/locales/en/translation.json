@@ -10,6 +10,10 @@
     "title": "Our services"
   },
   "features": {
-    "title": "Why us?"
+    "title": "Why us?",
+    "card": {
+      "title": "Expertise",
+      "description": "Our team consists of experienced professionals with extensive experience in various fields of IT"
+    }
   }
 }
