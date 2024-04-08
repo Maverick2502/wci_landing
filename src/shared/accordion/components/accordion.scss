@@ -5,16 +5,13 @@
   width: 100%;
 
   &__item {
-    padding: 30px 0;
-    border-bottom: 1px solid #4c4c4c;
-
     &__header {
       @include flex(row, space-between, center);
 
       width: 100%;
 
       background-color: #fff;
-      color: #4c4c4c;
+      color: #454545;
       font-size: 34px;
       font-weight: 500;
       line-height: 130%; /* 44.2px */
@@ -22,13 +19,12 @@
       position: relative;
       cursor: pointer;
 
+      font-family: "Geologica Variable", sans-serif;
+
+      margin: 22px 0px;
+
       &::after {
         content: url("../../../assets/icons/plus.svg");
-        border-radius: 15px;
-        background-color: $blue-main-color;
-        color: #fff;
-        width: 100px;
-        height: 60px;
 
         @include flex();
       }
@@ -42,6 +38,15 @@
       max-height: 0;
       overflow: hidden;
       transition: max-height 0.4s ease-out;
+
+      &__content {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 130%; /* 20.8px */
+        font-family: "Geologica Variable", sans-serif;
+
+        padding: 0 12px;
+      }
     }
   }
 }
