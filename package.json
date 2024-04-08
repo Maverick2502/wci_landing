@@ -23,8 +23,8 @@
     "*.{md,html,scss,json}": "prettier --write"
   },
   "dependencies": {
-    "@astrojs/check": "^0.5.7",
-    "@astrojs/react": "^3.1.0",
+    "@astrojs/check": "^0.5.10",
+    "@astrojs/react": "^3.1.1",
     "@fontsource-variable/geologica": "^5.0.4",
     "@fontsource-variable/inter": "^5.0.17",
     "@motionone/utils": "^10.17.0",
