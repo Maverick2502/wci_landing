@@ -11,27 +11,19 @@
       width: 100%;
 
       background-color: #fff;
-      color: #454545;
-      font-size: 34px;
-      font-weight: 500;
-      line-height: 130%; /* 44.2px */
-      text-transform: uppercase;
-      position: relative;
-      cursor: pointer;
 
-      font-family: "Geologica Variable", sans-serif;
+      & > h4 {
+        color: #454545;
+        font-size: 34px;
+        font-weight: 500;
+        line-height: 130%; /* 44.2px */
+        text-transform: uppercase;
+        cursor: pointer;
 
-      margin: 22px 0px;
+        font-family: "Geologica Variable", sans-serif;
 
-      &::after {
-        content: url("../../../assets/icons/plus.svg");
-
-        @include flex();
+        margin: 22px 0px;
       }
-    }
-
-    &__header.active::after {
-      content: url("../../../assets/icons/minus.svg");
     }
 
     &__body {
