@@ -12,7 +12,7 @@ interface FormProps {
 const EMAIL_REG_EX =
   /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
-const LETTERS_REG_EX = /^[A-Za-zА-Яа-я]+$/i;
+const LETTERS_REG_EX = /^[A-Za-zА-Яа-я\s]+$/i;
 
 const ContactUs = () => {
   const id = useId();
@@ -50,6 +50,7 @@ const ContactUs = () => {
             NAME*:
           </label>
           <input
+            autoComplete="off"
             id={`${id}-fullName`}
             aria-labelledby={`input-label-fullName`}
             type="text"
@@ -67,6 +68,7 @@ const ContactUs = () => {
             login
           </label>
           <input
+            autoComplete="off"
             id={`${id}-email`}
             aria-labelledby={`input-label-email`}
             type="email"
@@ -84,6 +86,7 @@ const ContactUs = () => {
             Message*:
           </label>
           <textarea
+            autoComplete="off"
             id={`${id}-message`}
             aria-labelledby={`input-label-message`}
             placeholder="message..."

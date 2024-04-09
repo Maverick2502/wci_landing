@@ -7,11 +7,11 @@ main {
   flex-grow: 1;
 }
 
-main > *:not(:last-of-type):not(:nth-last-of-type(2)) {
+main > *:not(:last-of-type):not(:nth-last-of-type(1)) {
   margin-bottom: 200px;
 }
 
 main > :last-of-type,
-main > :nth-last-of-type(2) {
-  margin: 0;
+main > :nth-last-of-type(1) {
+  margin-bottom: 0;
 }
