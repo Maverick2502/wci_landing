@@ -5,6 +5,13 @@ main {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+}
 
-  gap: 200px;
+main > *:not(:last-of-type):not(:nth-last-of-type(2)) {
+  margin-bottom: 200px;
+}
+
+main > :last-of-type,
+main > :nth-last-of-type(2) {
+  margin: 0;
 }
