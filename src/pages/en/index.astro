@@ -8,6 +8,7 @@ import Services from "@widgets/services/Services.astro";
 import Technologies from "@widgets/technologies/Technologies.astro";
 import { changeLanguage } from "i18next";
 import "../styles.scss";
+import ContactUsBanner from "@shared/contactUsBanner/ContactUsBanner.astro";
 
 changeLanguage("en");
 ---
@@ -20,6 +21,7 @@ changeLanguage("en");
     <Services />
     <Technologies />
     <!-- <ContactUs /> -->
+    <ContactUsBanner />
   </main>
   <!-- <Footer /> -->
 </Layout>

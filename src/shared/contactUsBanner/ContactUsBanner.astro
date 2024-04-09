@@ -1,0 +1,27 @@
+---
+import { Image } from "astro:assets";
+import classes from "./banner.module.scss";
+import clsx from "clsx";
+import cta_arrow_icon from "@assets/icons/cta_arrow.svg";
+import telegram_icon from "@assets/icons/telegram.svg";
+---
+
+<section class={classes["banner"]}>
+  <div class={classes["banner__container"]}>
+    <div class={clsx(classes["flex"], classes["banner-block"])}>
+      <div class={classes["banner-block__left-side"]}>
+        <h1>Мы создаем пакеты на заказ для достижения ваших целей</h1>
+      </div>
+      <div class={classes["banner-block__right-side"]}>
+        <!-- <button>
+          <Image width={48} height={48} src={cta_arrow_icon} alt="Call to action icon" />
+          <h5>Поговорим?</h5>
+        </button> -->
+        <button>
+          <Image width={48} height={48} src={telegram_icon} alt="Call to action icon of Telegram" />
+          <h5>Напиши нам</h5>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>

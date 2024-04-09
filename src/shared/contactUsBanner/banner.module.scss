@@ -1,0 +1,72 @@
+@import "../../styles/utilities/mixins.scss";
+@import "../../styles/utilities/variables.scss";
+
+.banner {
+  background-color: $blue-main-color;
+  padding: 76px 200px;
+  color: #fff;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+
+    max-width: $desktop-width;
+
+    padding: 0 20px;
+    margin: 0 auto;
+  }
+}
+
+.flex {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 72px;
+}
+
+.banner-block {
+  &__left-side {
+    & > h1 {
+      font-size: 48px;
+      font-weight: 500;
+      line-height: 130%; /* 62.4px */
+      letter-spacing: 0.32px;
+      text-transform: uppercase;
+
+      margin: 0;
+    }
+  }
+
+  &__right-side {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 16px;
+
+    & > button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      gap: 8px;
+
+      width: 300px;
+      height: 84px;
+
+      background-color: #fff;
+      padding: 24px 12px;
+      border-radius: $btn-border-radius-xl;
+
+      cursor: pointer;
+
+      & > h5 {
+        color: $black-main-color;
+        text-align: center;
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 130%;
+
+        font-family: "Geologica Variable", sans-serif;
+      }
+    }
+  }
+}
