@@ -1,36 +1,47 @@
 ---
-import "./footer.scss";
+import classes from "./footer.module.scss";
+
+const getCurrentYear = new Date().getFullYear();
 ---
 
-<footer class="footer" role="contentinfo">
-  <div class="footer__container">
-    <nav class="footer__nav" role="navigation">
-      <ul class="footer__nav__list">
-        <li class="footer__nav__list__item">
-          <a href="cookies">Cookies Policy</a>
-        </li>
-        <li class="footer__nav__list__item">
-          <a href="legal">Legal Terms</a>
-        </li>
-        <li class="footer__nav__list__item">
-          <a href="privacy-policy">Privacy Policy</a>
-        </li>
-      </ul>
+<footer class={classes["footer"]} role="contentinfo">
+  <div class={classes["footer__container"]}>
+    <div class={classes["flex"]}>
+      <div class={classes["information"]}>
+        <span>ООО «WeCraftIdeas»</span>
+        <a href="tel:+1 202 0550 2233">+1 202 0550 2233</a>
+        <a href="mailto:info@wci.com">info@wci.com</a>
+        <span>©{getCurrentYear} wci</span>
+      </div>
 
-      <ul class="footer__nav__list">
-        <li class="footer__nav__list__item">
-          <a href="https://www.linkedin.com/" aria-label="LinkedIn">LinkedIn</a>
-        </li>
-        <li class="footer__nav__list__item">
-          <a href="https://www.facebook.com/" aria-label="Facebook">Facebook</a>
-        </li>
-        <li class="footer__nav__list__item">
-          <a href="https://www.instagram.com/" aria-label="Instagram">Instagram</a>
-        </li>
-        <li class="footer__nav__list__item">
-          <a href="https://www.behance.net/" aria-label="Behance">Behance</a>
-        </li>
-      </ul>
-    </nav>
+      <nav class={classes["nav"]}>
+        <ul class={classes["nav__doc-list"]}>
+          <li class={classes["nav__doc-list__item"]}>
+            <a href="cookies">Политика использования файлов cookie</a>
+          </li>
+          <li class={classes["nav__doc-list__item"]}>
+            <a href="legal">Юридические термины</a>
+          </li>
+          <li class={classes["nav__doc-list__item"]}>
+            <a href="privacy-policy">Политика конфиденциальности</a>
+          </li>
+        </ul>
+
+        <ul class={classes["nav__socials-list"]}>
+          <li class={classes["nav__socials-list__item"]}>
+            <a href="https://www.linkedin.com/" aria-label="LinkedIn">LinkedIn</a>
+          </li>
+          <li class={classes["nav__socials-list__item"]}>
+            <a href="https://www.facebook.com/" aria-label="Facebook">Facebook</a>
+          </li>
+          <li class={classes["nav__socials-list__item"]}>
+            <a href="https://www.instagram.com/" aria-label="Instagram">Instagram</a>
+          </li>
+          <li class={classes["nav__socials-list__item"]}>
+            <a href="https://www.behance.net/" aria-label="Behance">Behance</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
   </div>
 </footer>

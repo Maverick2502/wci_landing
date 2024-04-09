@@ -1,0 +1,75 @@
+@import "../../styles/utilities/variables.scss";
+@import "../../styles/utilities/mixins.scss";
+
+.typographyModule {
+  color: $grey-color;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 130%; /* 20.8px */
+}
+
+a,
+span {
+  color: $grey-color;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 130%;
+}
+
+.footer {
+  background-color: $black-main-color;
+
+  &__container {
+    max-width: $desktop-width;
+    margin: 0 auto;
+
+    padding: 100px 20px;
+  }
+}
+
+.flex {
+  display: flex;
+  flex-direction: column;
+  gap: 46px;
+}
+
+.information {
+  display: flex;
+  flex-direction: column;
+  padding: 8px 12px;
+
+  & > span {
+    &:last-of-type {
+      margin-top: 24px;
+    }
+  }
+}
+
+.nav {
+  display: flex;
+  flex-direction: row;
+
+  gap: 100px;
+
+  &__doc-list {
+    display: flex;
+    flex-wrap: wrap;
+    height: fit-content;
+
+    max-width: 580px;
+
+    gap: 12px;
+
+    &__item {
+      display: flex;
+      padding: 8px 12px;
+    }
+  }
+
+  &__socials-list {
+    &__item {
+      display: flex;
+      padding: 8px 12px;
+    }
+  }
+}

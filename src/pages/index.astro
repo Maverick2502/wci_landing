@@ -10,6 +10,7 @@ import Services from "@widgets/services/Services.astro";
 import Technologies from "@widgets/technologies/Technologies.astro";
 import { changeLanguage } from "i18next";
 import "./styles.scss";
+import Footer from "@widgets/footer/Footer.astro";
 
 changeLanguage("ru");
 ---
@@ -24,5 +25,5 @@ changeLanguage("ru");
     <ContactUsBanner />
     <ContactUs client:load />
   </main>
-  <!-- <Footer /> -->
+  <Footer />
 </Layout>
