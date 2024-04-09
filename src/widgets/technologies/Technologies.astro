@@ -1,0 +1,142 @@
+---
+import ParallaxText from "@shared/parallaxText/components";
+import classes from "./technologies.module.scss";
+---
+
+<section class={classes["technologies"]}>
+  <ParallaxText client:load headerTitle="Технологии" />
+  <div class={classes["technologies__container"]}>
+    <div class={classes["technologies-block"]}>
+      <ul class={classes["technologies-block__list"]}>
+        <li class={classes["technologies-block__list__item"]}>
+          <div class={classes["technologies-block__list__item__left"]}>
+            <span>01</span>
+            <div>
+              <p>Backend</p>
+              <ul>
+                <li>Go</li>
+                <li>Python</li>
+                <li>Java</li>
+                <li>C#</li>
+                <li>Nodejs</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class={classes["technologies-block__list__item__right"]}>
+            <ul>
+              <li>
+                <h5>Проектирование архитектуры</h5>
+              </li>
+              <li>
+                <h5>Разработка серверной части приложений</h5>
+              </li>
+              <li>
+                <h5>Интеграция с внешними сервисами</h5>
+              </li>
+            </ul>
+          </div>
+        </li>
+
+        <li class={classes["technologies-block__list__item"]}>
+          <div class={classes["technologies-block__list__item__left"]}>
+            <span>02</span>
+            <div>
+              <p>Frontend</p>
+              <ul>
+                <li>JavaScript</li>
+                <li>TypeScript</li>
+                <li>Nodejs</li>
+                <li>React</li>
+                <li>Astrojs</li>
+                <li>Nextjs</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class={classes["technologies-block__list__item__right"]}>
+            <ul>
+              <li>
+                <h5>Разработка на базе фреймворков</h5>
+              </li>
+              <li>
+                <h5>Адаптивная верстка</h5>
+              </li>
+              <li>
+                <h5>Кросс-браузерная верстка</h5>
+              </li>
+            </ul>
+          </div>
+        </li>
+
+        <li class={classes["technologies-block__list__item"]}>
+          <div class={classes["technologies-block__list__item__left"]}>
+            <span>03</span>
+            <div>
+              <p>Mobile</p>
+              <ul>
+                <li>Kotlin</li>
+                <li>Switft</li>
+                <li>Flutter</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class={classes["technologies-block__list__item__right"]}>
+            <ul>
+              <li>
+                <h5>Разработка нативных приложений</h5>
+              </li>
+              <li>
+                <h5>Разработка кроссплатформенных приложений</h5>
+              </li>
+              <li>
+                <h5>Проектирование архитектуры</h5>
+              </li>
+              <li>
+                <h5>Аудит текущего состояния</h5>
+              </li>
+              <li>
+                <h5>Доработка приложений</h5>
+              </li>
+            </ul>
+          </div>
+        </li>
+
+        <li class={classes["technologies-block__list__item"]}>
+          <div class={classes["technologies-block__list__item__left"]}>
+            <span>04</span>
+            <div>
+              <p>QA</p>
+              <ul>
+                <li>Postman</li>
+                <li>SQL</li>
+                <li>Selenium</li>
+                <li>Junit</li>
+                <li>Pytest</li>
+                <li>Jmeter</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class={classes["technologies-block__list__item__right"]}>
+            <ul>
+              <li>
+                <h5>Мануальное тестирование</h5>
+              </li>
+              <li>
+                <h5>Автоматизированное тестирование</h5>
+              </li>
+              <li>
+                <h5>Нагрузочное тестирование</h5>
+              </li>
+              <li>
+                <h5>QA-консалтинг</h5>
+              </li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>

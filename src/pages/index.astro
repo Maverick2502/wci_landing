@@ -5,9 +5,9 @@ import Features from "@widgets/features/Features.astro";
 import Header from "@widgets/header/Header.astro";
 import Hero from "@widgets/hero/Hero.astro";
 import Services from "@widgets/services/Services.astro";
+import Technologies from "@widgets/technologies/Technologies.astro";
 import { changeLanguage } from "i18next";
 import "./styles.scss";
-import ContactUs from "@widgets/contactUs/ContactUs.astro";
 
 changeLanguage("ru");
 ---
@@ -18,7 +18,8 @@ changeLanguage("ru");
     <Hero />
     <Features />
     <Services />
-    <ContactUs />
+    <Technologies />
+    <!-- <ContactUs /> -->
   </main>
   <!-- <Footer /> -->
 </Layout>

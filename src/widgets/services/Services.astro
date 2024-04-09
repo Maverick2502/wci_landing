@@ -1,13 +1,13 @@
 ---
 import Accordion from "@shared/accordion/components";
-import "./services.scss";
+import classes from "./services.module.scss";
 import { accordionData } from "./data";
 import ParallaxText from "@shared/parallaxText/components/index";
 ---
 
-<section class="services">
+<section class={classes["services"]}>
   <ParallaxText client:load headerTitle="Наши услуги" />
-  <div class="services__container">
+  <div class={classes["services__container"]}>
     <Accordion data={accordionData} client:visible />
   </div>
 </section>
