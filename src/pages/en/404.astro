@@ -27,29 +27,33 @@ changeLanguage("en");
 </Layout>
 
 <script>
-  const goBackBtn = document.getElementById("goBack");
-  // MouseMove
-  const imageContainer = document.getElementById("imageContainer");
-  const image = imageContainer?.querySelector("img");
+  document.addEventListener("astro:page-load", () => {
+    const goBackBtn = document.getElementById("goBack");
 
-  goBackBtn?.addEventListener("click", () => {
-    history.back();
+    goBackBtn?.addEventListener("click", () => {
+      history.back();
+    });
   });
 
-  const handleMouseMove = (event: MouseEvent) => {
-    if (!imageContainer || !image) return;
+  document.addEventListener("astro:page-load", () => {
+    const imageContainer = document.getElementById("imageContainer");
+    const image = imageContainer?.querySelector("img");
 
-    const containerRect = imageContainer.getBoundingClientRect();
-    const centerX = containerRect.left + containerRect.width / 2;
-    const centerY = containerRect.top + containerRect.height / 2;
+    const handleMouseMove = (event: MouseEvent) => {
+      if (!imageContainer || !image) return;
 
-    const movementRange = 30;
+      const containerRect = imageContainer.getBoundingClientRect();
+      const centerX = containerRect.left + containerRect.width / 2;
+      const centerY = containerRect.top + containerRect.height / 2;
 
-    const offsetX = ((event.clientX - centerX) / containerRect.width) * movementRange;
-    const offsetY = ((event.clientY - centerY) / containerRect.height) * movementRange;
+      const movementRange = 30;
 
-    image.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
-  };
+      const offsetX = ((event.clientX - centerX) / containerRect.width) * movementRange;
+      const offsetY = ((event.clientY - centerY) / containerRect.height) * movementRange;
 
-  imageContainer?.addEventListener("mousemove", handleMouseMove);
+      image.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
+    };
+
+    imageContainer?.addEventListener("mousemove", handleMouseMove);
+  });
 </script>
