@@ -1,0 +1,32 @@
+---
+import classes from "./notFound.module.scss";
+import Layout from "@layouts/Layout.astro";
+import icon from "@assets/icons/404_icon.svg";
+import { Image } from "astro:assets";
+---
+
+<Layout title="Page Not Found | WCI">
+  <section class={classes["container-notFound"]} role="alert">
+    <div class={classes["outer-circle"]}>
+      <div class={classes["inner-circle"]}>
+        <div>
+          <span>4</span>
+          <Image src={icon} alt="3D icon of zero" loading="eager" decoding="async" />
+          <span>4</span>
+        </div>
+        <div>
+          <p>Oops! Page not found</p>
+          <button id="goBack" type="button" aria-label="Go Back to Previous Page">Go back!</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  const goBackBtn = document.getElementById("goBack");
+
+  goBackBtn?.addEventListener("click", () => {
+    history.back();
+  });
+</script>
