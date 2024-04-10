@@ -5,6 +5,11 @@
   width: 100%;
 
   &__item {
+    :focus-visible {
+      outline: 2px solid #454545;
+      border-radius: $card-border-radius;
+    }
+
     &__header {
       @include flex(row, space-between, center);
 

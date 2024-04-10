@@ -1,4 +1,5 @@
 @import "../../../styles/utilities/mixins.scss";
+@import "../../../styles/utilities/variables.scss";
 
 .menu-nav {
   @include flex(column, space-between, flex-start);
@@ -13,13 +14,19 @@
 
     gap: 36px;
 
-    a {
-      // font-family: "SF Pro";
-      font-size: 36px;
-      font-weight: 590;
-      line-height: 100%;
+    & > li {
+      :focus-visible {
+        outline: 2px solid #454545;
+        border-radius: $card-border-radius;
+      }
 
-      color: #4c4c4c;
+      a {
+        font-size: 36px;
+        font-weight: 590;
+        line-height: 100%;
+
+        color: #4c4c4c;
+      }
     }
   }
 
@@ -28,10 +35,17 @@
     flex-wrap: wrap;
     gap: 20px;
 
-    a {
-      font-size: 16px;
-      font-weight: 510;
-      color: #8c8c8c;
+    & > li {
+      :focus-visible {
+        outline: 2px solid #454545;
+        border-radius: $card-border-radius;
+      }
+
+      a {
+        font-size: 16px;
+        font-weight: 510;
+        color: #8c8c8c;
+      }
     }
   }
 }
