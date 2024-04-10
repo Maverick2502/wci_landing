@@ -28,13 +28,13 @@ changeLanguage("en");
 
 <script>
   const goBackBtn = document.getElementById("goBack");
+  // MouseMove
+  const imageContainer = document.getElementById("imageContainer");
+  const image = imageContainer?.querySelector("img");
 
   goBackBtn?.addEventListener("click", () => {
     history.back();
   });
-
-  const imageContainer = document.getElementById("imageContainer");
-  const image = imageContainer?.querySelector("img");
 
   const handleMouseMove = (event: MouseEvent) => {
     if (!imageContainer || !image) return;
