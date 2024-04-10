@@ -1,11 +1,11 @@
 ---
 import { changeLanguage } from "i18next";
-import classes from "./notFound.module.scss";
+import classes from "../notFound.module.scss";
 import Layout from "@layouts/Layout.astro";
 import icon from "@assets/icons/404_icon.svg";
 import { Image } from "astro:assets";
 
-changeLanguage("ru");
+changeLanguage("en");
 ---
 
 <Layout title="Page Not Found | WCI">
@@ -28,13 +28,13 @@ changeLanguage("ru");
 
 <script>
   const goBackBtn = document.getElementById("goBack");
-  // MouseMove
-  const imageContainer = document.getElementById("imageContainer");
-  const image = imageContainer?.querySelector("img");
 
   goBackBtn?.addEventListener("click", () => {
     history.back();
   });
+
+  const imageContainer = document.getElementById("imageContainer");
+  const image = imageContainer?.querySelector("img");
 
   const handleMouseMove = (event: MouseEvent) => {
     if (!imageContainer || !image) return;
