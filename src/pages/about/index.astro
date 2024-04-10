@@ -1,0 +1,99 @@
+---
+import { changeLanguage } from "i18next";
+import Layout from "@layouts/Layout.astro";
+import classes from "./about.module.scss";
+import { Image } from "astro:assets";
+import logo from "@assets/icons/wci.svg";
+import NavigationMenu from "@shared/navigationMenu/components";
+import Footer from "@widgets/footer/Footer.astro";
+import ContactUs from "@widgets/contactUs/ContactUs";
+import team from "@assets/images/team.webp";
+
+changeLanguage("ru");
+
+const isActive = (path: string) => Astro.url.pathname === path || Astro.url.pathname.startsWith(path + "/");
+---
+
+<Layout title="About us | WCI">
+  <header class={classes["header"]}>
+    <div class={classes["header__container"]}>
+      <Image
+        height={50}
+        width={120}
+        format="svg"
+        class={classes["header__image"]}
+        src={logo}
+        alt="Website Name Logo"
+        loading="eager"
+        decoding="async"
+      />
+
+      <div class={classes["header__btn-groups"]}>
+        <div class={classes["language-switcher"]}>
+          <a
+            href="/en"
+            aria-label="English"
+            class:list={[
+              classes["language-switcher__switcher"],
+              { [classes["language-switcher__switcher-active"]]: isActive("/en") },
+            ]}
+          >
+            EN
+          </a>
+          <a
+            href="/"
+            aria-label="Russian"
+            class:list={[
+              classes["language-switcher__switcher"],
+              { [classes["language-switcher__switcher-active"]]: isActive("/") },
+            ]}>RU</a
+          >
+        </div>
+        <NavigationMenu client:load />
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class={classes["about"]}>
+      <div class={classes["about__container"]}>
+        <h1 class={classes["about__title"]}>О нас</h1>
+
+        <div class={classes["about__content"]}>
+          <p>
+            Мы - ведущая компания в области IT-аутсорсинга, предоставляющая широкий спектр услуг по разработке
+            программного обеспечения, информационной безопасности, технической поддержке и многому другому.
+          </p>
+
+          <p>
+            Наша миссия - помогать бизнесам улучшать свою эффективность, расширять границы возможностей и достигать
+            новых высот в цифровой эпохе.
+          </p>
+
+          <p>
+            С 2024 года мы успешно работаем на рынке IT-аутсорсинга, помогая нашим клиентам воплощать в жизнь самые
+            амбициозные проекты. За это время мы завершили более 10+ проектов, утвердившись как надежный партнер с
+            безупречной репутацией.
+          </p>
+        </div>
+      </div>
+
+      <div class={classes["banner"]}>
+        <div class={classes["banner__container"]}>
+          <Image class={classes["banner__img"]} src={team} alt="image" />
+        </div>
+      </div>
+
+      <div class={classes["team"]}>
+        <div class={classes["team__container"]}>
+          <h1 class={classes["team__title"]}>Наша команда</h1>
+
+          <div class={classes["carousel"]}></div>
+        </div>
+      </div>
+    </section>
+    <ContactUs />
+  </main>
+
+  <Footer />
+</Layout>

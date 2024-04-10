@@ -3,15 +3,19 @@ import type { LinkI } from "./types";
 export const links: LinkI[] = [
   {
     title: "Services",
-    href: "#services",
+    href: "/#services",
   },
   {
     title: "Why us?",
-    href: "#features",
+    href: "/#features",
   },
   {
     title: "Contact",
-    href: "#contact",
+    href: "/#contact",
+  },
+  {
+    title: "About us",
+    href: "/about",
   },
 ];
 

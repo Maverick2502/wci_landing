@@ -1,0 +1,53 @@
+---
+import { changeLanguage } from "i18next";
+import Layout from "@layouts/Layout.astro";
+import classes from "../about.module.scss";
+import { Image } from "astro:assets";
+import logo from "@assets/icons/wci.svg";
+import NavigationMenu from "@shared/navigationMenu/components";
+
+changeLanguage("en");
+
+const isActive = (path: string) => Astro.url.pathname === path || Astro.url.pathname.startsWith(path + "/");
+---
+
+<Layout title="About us | WCI">
+  <header class={classes["header"]}>
+    <div class={classes["header__container"]}>
+      <Image
+        height={50}
+        width={120}
+        format="svg"
+        class={classes["header__image"]}
+        src={logo}
+        alt="Website Name Logo"
+        loading="eager"
+        decoding="async"
+      />
+
+      <div class={classes["header__btn-groups"]}>
+        <div class={classes["language-switcher"]}>
+          <a
+            href="/en"
+            aria-label="English"
+            class:list={[
+              classes["language-switcher__switcher"],
+              { [classes["language-switcher__switcher-active"]]: isActive("/en") },
+            ]}
+          >
+            EN
+          </a>
+          <a
+            href="/"
+            aria-label="Russian"
+            class:list={[
+              classes["language-switcher__switcher"],
+              { [classes["language-switcher__switcher-active"]]: isActive("/") },
+            ]}>RU</a
+          >
+        </div>
+        <NavigationMenu client:load />
+      </div>
+    </div>
+  </header>
+</Layout>
