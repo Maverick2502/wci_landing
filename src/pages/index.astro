@@ -1,7 +1,6 @@
 ---
 import Layout from "@layouts/Layout.astro";
 import ContactUsBanner from "@shared/contactUsBanner/ContactUsBanner.astro";
-import "@styles/index.scss";
 import ContactUs from "@widgets/contactUs/ContactUs";
 import Features from "@widgets/features/Features.astro";
 import Header from "@widgets/header/Header.astro";
@@ -9,15 +8,15 @@ import Hero from "@widgets/hero/Hero.astro";
 import Services from "@widgets/services/Services.astro";
 import Technologies from "@widgets/technologies/Technologies.astro";
 import { changeLanguage } from "i18next";
-import "./styles.scss";
 import Footer from "@widgets/footer/Footer.astro";
+import classes from "@styles/pages/index.module.scss";
 
 changeLanguage("ru");
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="We craft ideas | WCI">
   <Header />
-  <main>
+  <main class={classes["container"]}>
     <Hero />
     <Features />
     <Services />
