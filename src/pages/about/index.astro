@@ -87,9 +87,58 @@ const isActive = (path: string) => Astro.url.pathname === path || Astro.url.path
       <div class={classes["team"]}>
         <div class={classes["team__container"]}>
           <h1 class={classes["team__title"]}>Наша команда</h1>
-
-          <div class={classes["carousel"]}></div>
         </div>
+      </div>
+
+      <div class={classes["wrapper"]}>
+        <div id="carousel" class={classes["carousel"]}>
+          <div id="content" class={classes["content"]}>
+            <img
+              class={classes["item"]}
+              src="https://lh3.googleusercontent.com/0OynDYRoCaQWJIUyiOrUVeoub0mLNrDUcUZrJXF2WHQD77o-F_g2EnqZqVevO954WzD7mC5qTg=w512-h512-l90-rj"
+            />
+            <img
+              class={classes["item"]}
+              src="https://lh3.googleusercontent.com/0OynDYRoCaQWJIUyiOrUVeoub0mLNrDUcUZrJXF2WHQD77o-F_g2EnqZqVevO954WzD7mC5qTg=w512-h512-l90-rj"
+            />
+            <img
+              class={classes["item"]}
+              src="https://lh3.googleusercontent.com/0OynDYRoCaQWJIUyiOrUVeoub0mLNrDUcUZrJXF2WHQD77o-F_g2EnqZqVevO954WzD7mC5qTg=w512-h512-l90-rj"
+            />
+            <img
+              class={classes["item"]}
+              src="https://lh3.googleusercontent.com/0OynDYRoCaQWJIUyiOrUVeoub0mLNrDUcUZrJXF2WHQD77o-F_g2EnqZqVevO954WzD7mC5qTg=w512-h512-l90-rj"
+            />
+            <img
+              class={classes["item"]}
+              src="https://lh3.googleusercontent.com/0OynDYRoCaQWJIUyiOrUVeoub0mLNrDUcUZrJXF2WHQD77o-F_g2EnqZqVevO954WzD7mC5qTg=w512-h512-l90-rj"
+            />
+            <img
+              class={classes["item"]}
+              src="https://lh3.googleusercontent.com/0OynDYRoCaQWJIUyiOrUVeoub0mLNrDUcUZrJXF2WHQD77o-F_g2EnqZqVevO954WzD7mC5qTg=w512-h512-l90-rj"
+            />
+            <img
+              class={classes["item"]}
+              src="https://lh3.googleusercontent.com/0OynDYRoCaQWJIUyiOrUVeoub0mLNrDUcUZrJXF2WHQD77o-F_g2EnqZqVevO954WzD7mC5qTg=w512-h512-l90-rj"
+            />
+            <img
+              class={classes["item"]}
+              src="https://lh3.googleusercontent.com/0OynDYRoCaQWJIUyiOrUVeoub0mLNrDUcUZrJXF2WHQD77o-F_g2EnqZqVevO954WzD7mC5qTg=w512-h512-l90-rj"
+            />
+          </div>
+        </div>
+        <button id="prev" class={classes["prev"]}>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+            <path fill="none" d="M0 0h24v24H0V0z"></path>
+            <path d="M15.61 7.41L14.2 6l-6 6 6 6 1.41-1.41L11.03 12l4.58-4.59z"></path>
+          </svg>
+        </button>
+        <button id="next" class={classes["next"]}>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+            <path fill="none" d="M0 0h24v24H0V0z"></path>
+            <path d="M10.02 6L8.61 7.41 13.19 12l-4.58 4.59L10.02 18l6-6-6-6z"></path>
+          </svg>
+        </button>
       </div>
     </section>
     <ContactUs />
@@ -97,3 +146,102 @@ const isActive = (path: string) => Astro.url.pathname === path || Astro.url.path
 
   <Footer />
 </Layout>
+
+<script>
+  const carousel = document.getElementById("carousel")!;
+  const content = document.getElementById("content")!;
+  const next = document.getElementById("next")!;
+  const prev = document.getElementById("prev")!;
+
+  const GAP = 16;
+
+  let width = carousel.offsetWidth;
+
+  function updateButtons() {
+    prev.style.display = carousel.scrollLeft === 0 ? "none" : "flex";
+    next.style.display = carousel.scrollLeft + width >= content.scrollWidth - GAP ? "none" : "flex";
+  }
+
+  function scrollCarousel(offset: number) {
+    carousel.scrollBy(offset, 0);
+    updateButtons();
+  }
+
+  next.addEventListener("click", () => scrollCarousel(width + GAP));
+  prev.addEventListener("click", () => scrollCarousel(-(width + GAP)));
+
+  window?.addEventListener("resize", () => {
+    width = carousel.offsetWidth;
+    updateButtons();
+  });
+
+  updateButtons();
+
+  // const carousel = document.getElementById("carousel");
+  // const content = document.getElementById("content");
+  // const next = document.getElementById("next");
+  // const prev = document.getElementById("prev");
+
+  // const GAP = 16;
+
+  // if (carousel && content && next && prev) {
+  //   const handleNextClick = () => {
+  //     carousel.scrollBy(width + GAP, 0);
+  //     if (carousel.scrollWidth !== 0) {
+  //       prev.style.display = "flex";
+  //     }
+  //     if (content.scrollWidth - width - GAP <= carousel.scrollLeft + width) {
+  //       next.style.display = "flex";
+  //     }
+  //   };
+
+  //   const handlePrevClick = () => {
+  //     carousel.scrollBy(-(width + GAP), 0);
+  //     if (carousel.scrollLeft - width - GAP <= 0) {
+  //       prev.style.display = "flex";
+  //     }
+  //     if (!(content.scrollWidth - width - GAP <= carousel.scrollLeft + width)) {
+  //       next.style.display = "flex";
+  //     }
+  //   };
+
+  //   let width = carousel.offsetWidth;
+
+  //   window.addEventListener("resize", () => {
+  //     width = carousel.offsetWidth;
+  //   });
+
+  //   next.addEventListener("click", handleNextClick);
+  //   prev.addEventListener("click", handlePrevClick);
+  // }
+
+  // let carousel = document.getElementById("carousel");
+  // let content = document.getElementById("content");
+  // let next = document.getElementById("next");
+  // let prev = document.getElementById("prev");
+
+  // const GAP = 16;
+
+  // next.addEventListener("click", () => {
+  //   carousel.scrollBy(width + GAP, 0);
+  //   if (carousel.scrollWidth !== 0) {
+  //     prev.style.display = "flex";
+  //   }
+  //   if (content.scrollWidth - width - GAP <= carousel.scrollLeft + width) {
+  //     next.style.display = "none";
+  //   }
+  // });
+  // prev.addEventListener("click", e => {
+  //   carousel.scrollBy(-(width + GAP), 0);
+  //   if (carousel.scrollLeft - width - GAP <= 0) {
+  //     prev.style.display = "none";
+  //   }
+  //   if (!content.scrollWidth - width - GAP <= carousel.scrollLeft + width) {
+  //     next.style.display = "flex";
+  //   }
+  // });
+
+  // let width = carousel.offsetWidth;
+
+  // window.addEventListener("resize", () => (width = carousel.offsetWidth));
+</script>
