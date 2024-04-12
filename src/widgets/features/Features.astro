@@ -1,8 +1,8 @@
 ---
-import globe from "@assets/images/globe.webp";
-import handshake from "@assets/images/handshake.webp";
-import silver_brain from "@assets/images/silver_brain.webp";
-import silver_shield from "@assets/images/silver_shield.webp";
+import brain from "@assets/icons/brain.svg";
+import globe from "@assets/icons/globe.svg";
+import handshake from "@assets/icons/handshake.svg";
+import shield from "@assets/icons/shield.svg";
 import ParallaxText from "@shared/parallaxText/components";
 import { Image } from "astro:assets";
 import { t } from "i18next";
@@ -12,38 +12,74 @@ import classes from "./features.module.scss";
 <section class={classes["features"]}>
   <ParallaxText client:load headerTitle="Почему выбрали нас?" />
   <div class={classes["features__container"]}>
-    <div class={classes["card-container"]}>
-      <div class={classes["card"]}>
+    <ul class={classes["card-container"]}>
+      <li class={classes["card"]}>
         <div class={classes["card__flex"]}>
-          <Image class={classes["card__img"]} src={silver_brain} alt="expertise" />
+          <Image
+            src={brain}
+            alt="Brain icon representing smth"
+            width={122}
+            height={100}
+            loading="lazy"
+            decoding="async"
+            class={classes["card__img"]}
+            role="presentation"
+          />
           <h2 class={classes["card__title"]}>{t("features.card.title")}</h2>
           <span class={classes["card__description"]}>{t("features.card.description")}</span>
         </div>
-      </div>
+      </li>
 
-      <div class={classes["card"]}>
+      <li class={classes["card"]}>
         <div class={classes["card__flex"]}>
-          <Image class={classes["card__img"]} src={globe} alt="expertise" />
+          <Image
+            src={globe}
+            alt="Globe icon representing smth"
+            width={122}
+            height={100}
+            loading="lazy"
+            decoding="async"
+            class={classes["card__img"]}
+            role="presentation"
+          />
           <h2 class={classes["card__title"]}>{t("features.card.title")}</h2>
           <span class={classes["card__description"]}>{t("features.card.description")}</span>
         </div>
-      </div>
+      </li>
 
-      <div class={classes["card"]}>
+      <li class={classes["card"]}>
         <div class={classes["card__flex"]}>
-          <Image class={classes["card__img"]} src={handshake} alt="expertise" />
+          <Image
+            src={handshake}
+            alt="Handshake icon representing smth"
+            width={122}
+            height={100}
+            loading="lazy"
+            decoding="async"
+            class={classes["card__img"]}
+            role="presentation"
+          />
           <h2 class={classes["card__title"]}>{t("features.card.title")}</h2>
           <span class={classes["card__description"]}>{t("features.card.description")}</span>
         </div>
-      </div>
+      </li>
 
-      <div class={classes["card"]}>
+      <li class={classes["card"]}>
         <div class={classes["card__flex"]}>
-          <Image class={classes["card__img"]} src={silver_shield} alt="expertise" />
+          <Image
+            src={shield}
+            alt="Shield icon representing smth"
+            width={122}
+            height={100}
+            loading="lazy"
+            decoding="async"
+            class={classes["card__img"]}
+            role="presentation"
+          />
           <h2 class={classes["card__title"]}>{t("features.card.title")}</h2>
           <span class={classes["card__description"]}>{t("features.card.description")}</span>
         </div>
-      </div>
-    </div>
+      </li>
+    </ul>
   </div>
 </section>
