@@ -20,7 +20,9 @@
 
   a,
   span {
-    color: $grey-color;
+    // MARK:In order to pass ally
+    // color: $grey-color;
+    color: #ccc;
     font-size: 16px;
     font-weight: 500;
     line-height: 130%;
