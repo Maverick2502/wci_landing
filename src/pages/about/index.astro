@@ -21,16 +21,18 @@ const isActive = (path: string) => Astro.url.pathname === path || Astro.url.path
 <Layout title="About us | WCI">
   <header class={classes["header"]}>
     <div class={classes["header__container"]}>
-      <Image
-        height={50}
-        width={120}
-        format="svg"
-        class={classes["header__image"]}
-        src={logo}
-        alt="Website Name Logo"
-        loading="eager"
-        decoding="async"
-      />
+      <a href="/">
+        <Image
+          height={50}
+          width={120}
+          format="svg"
+          class={classes["header__image"]}
+          src={logo}
+          alt="Website Name Logo"
+          loading="eager"
+          decoding="async"
+        />
+      </a>
 
       <div class={classes["header__btn-groups"]}>
         <div class={classes["language-switcher"]}>
