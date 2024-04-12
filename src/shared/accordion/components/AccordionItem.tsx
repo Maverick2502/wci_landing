@@ -23,7 +23,7 @@ const AccordionItem = ({ title, content, isActive, onToggle }: AccordionItemProp
         className={classes["accordion__item__header"]}
         onClick={onToggle}
       >
-        <h4>{title}</h4>
+        <h1>{title}</h1>
         <span
           style={{
             transform: isActive ? "rotate(45deg)" : "rotate(0deg)",
