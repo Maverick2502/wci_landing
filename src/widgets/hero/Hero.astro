@@ -13,7 +13,7 @@ import classes from "./hero.module.scss";
     id="hero__image"
     class={classes["hero__image"]}
     src={wciim}
-    alt="Logo"
+    alt="Logo for WCI"
     loading="eager"
     decoding="async"
   />
@@ -21,8 +21,6 @@ import classes from "./hero.module.scss";
     <div transition:animate={slide({ duration: "1.2s" })} class={classes["hero__content"]}>
       <h1>
         {t("hero.headerFirstLine")}
-      </h1>
-      <h1>
         {t("hero.headerSecondLine")}
       </h1>
 
@@ -30,9 +28,11 @@ import classes from "./hero.module.scss";
         {t("hero.paragraph")}
       </p>
 
-      <button>
-        {t("hero.button")}
-      </button>
+      <a href="#contact">
+        <button class={classes["hero__btn"]} type="button">
+          {t("hero.button")}
+        </button>
+      </a>
     </div>
   </div>
 </section>

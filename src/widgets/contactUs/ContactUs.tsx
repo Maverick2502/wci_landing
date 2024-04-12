@@ -1,7 +1,7 @@
 import contactUs from "@assets/icons/export.svg";
-import classes from "./contactUs.module.scss";
-import { useForm, type SubmitHandler } from "react-hook-form";
 import { useId } from "react";
+import { useForm, type SubmitHandler } from "react-hook-form";
+import classes from "./contactUs.module.scss";
 
 interface FormProps {
   fullName: string;
@@ -19,7 +19,6 @@ const ContactUs = () => {
   const {
     register,
     handleSubmit,
-    getValues,
     formState: { errors },
   } = useForm<FormProps>({
     defaultValues: {
@@ -38,7 +37,7 @@ const ContactUs = () => {
   };
 
   return (
-    <section className={classes["contactUs"]}>
+    <section id="contact" className={classes["contactUs"]}>
       <div className={classes["contactUs__container"]}>
         <div className={classes["title-block"]}>
           <h1>Давай поговорим</h1>
