@@ -31,13 +31,7 @@ const AccordionItem = ({ title, content, isActive, onToggle }: AccordionItemProp
           }}
         >
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M3 12H21M12 3V21"
-              stroke="#454545"
-              stroke-width="5"
-              stroke-linecap="square"
-              stroke-linejoin="round"
-            />
+            <path d="M3 12H21M12 3V21" stroke="#454545" strokeWidth="5" strokeLinecap="square" strokeLinejoin="round" />
           </svg>
         </span>
       </button>
