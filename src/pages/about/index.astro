@@ -29,7 +29,9 @@ const isActive = (path: string) => Astro.url.pathname === path || Astro.url.path
           class={classes["header__image"]}
           src={logo}
           alt="Website Name Logo"
-          loading="eager"
+          width={122}
+          height={100}
+          loading="lazy"
           decoding="async"
         />
       </a>
@@ -112,56 +114,54 @@ const isActive = (path: string) => Astro.url.pathname === path || Astro.url.path
         </div>
       </div>
     </section>
-  </main>
 
-  <div class={classes["wrapper"]}>
-    <div id="carousel" class={classes["carousel"]}>
-      <ul class={classes["carousel__list"]}>
-        <li class={classes["carousel__list__item"]}>
-          <Image src={obi_wan} alt="person" loading="eager" decoding="async" />
-          <div class={classes["carousel__list__item__info"]}>
-            <span>Obi-Wan Kenobi</span>
-            <span>Jedi Master</span>
-          </div>
-        </li>
+    <div class={classes["wrapper"]}>
+      <div id="carousel" class={classes["carousel"]}>
+        <ul class={classes["carousel__list"]}>
+          <li class={classes["carousel__list__item"]}>
+            <Image src={obi_wan} alt="person" width={500} height={370} loading="lazy" decoding="async" />
+            <div class={classes["carousel__list__item__info"]}>
+              <span>Obi-Wan Kenobi</span>
+              <span>Jedi Master</span>
+            </div>
+          </li>
 
-        <li class={classes["carousel__list__item"]}>
-          <Image src={windu} alt="person" loading="eager" decoding="async" />
-          <div class={classes["carousel__list__item__info"]}>
-            <span>Mace Windu</span>
-            <span>Jedi Master</span>
-          </div>
-        </li>
+          <li class={classes["carousel__list__item"]}>
+            <Image src={windu} alt="person" width={500} height={370} loading="lazy" decoding="async" />
+            <div class={classes["carousel__list__item__info"]}>
+              <span>Mace Windu</span>
+              <span>Jedi Master</span>
+            </div>
+          </li>
 
-        <li class={classes["carousel__list__item"]}>
-          <Image src={person_one} alt="person" loading="eager" decoding="async" />
-          <div class={classes["carousel__list__item__info"]}>
-            <span>Yoda</span>
-            <span>Jedi Master</span>
-          </div>
-        </li>
+          <li class={classes["carousel__list__item"]}>
+            <Image src={person_one} alt="person" width={500} height={370} loading="lazy" decoding="async" />
+            <div class={classes["carousel__list__item__info"]}>
+              <span>Yoda</span>
+              <span>Jedi Master</span>
+            </div>
+          </li>
 
-        <li class={classes["carousel__list__item"]}>
-          <Image src={person} alt="person" loading="eager" decoding="async" />
-          <div class={classes["carousel__list__item__info"]}>
-            <span>Plo Koon</span>
-            <span>Jedi Master</span>
-          </div>
-        </li>
+          <li class={classes["carousel__list__item"]}>
+            <Image src={person} alt="person" width={500} height={370} loading="lazy" decoding="async" />
+            <div class={classes["carousel__list__item__info"]}>
+              <span>Plo Koon</span>
+              <span>Jedi Master</span>
+            </div>
+          </li>
 
-        <li class={classes["carousel__list__item"]}>
-          <Image src={person} alt="person" loading="eager" decoding="async" />
-          <div class={classes["carousel__list__item__info"]}>
-            <span>Anakin Skywalker</span>
-            <span>Padawan</span>
-          </div>
-        </li>
-      </ul>
+          <li class={classes["carousel__list__item"]}>
+            <Image src={person} alt="person" width={500} height={370} loading="lazy" decoding="async" />
+            <div class={classes["carousel__list__item__info"]}>
+              <span>Anakin Skywalker</span>
+              <span>Padawan</span>
+            </div>
+          </li>
+        </ul>
+      </div>
     </div>
-  </div>
-
-  <ContactUs client:load />
-
+    <ContactUs client:load />
+  </main>
   <Footer />
 </Layout>
 
