@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from "framer-motion";
-import { useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { menu } from "../utils/anim";
 import { Button } from "./Button";
 import { Menu } from "./Menu";
@@ -12,8 +12,19 @@ function NavigationMenu() {
     setIsActive(!isActive);
   };
 
+  const handleClickOutside = useCallback((e: any) => {
+    if (!e.target.closest("#nav-menu")) {
+      setIsActive(false);
+    }
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener("mousedown", handleClickOutside);
+    return () => window.removeEventListener("mousedown", handleClickOutside);
+  }, [handleClickOutside]);
+
   return (
-    <div className="nav-menu-container">
+    <div className="nav-menu-container" id="nav-menu">
       <motion.div
         animate={isActive ? "open" : "closed"}
         className="nav-menu-container__content"
