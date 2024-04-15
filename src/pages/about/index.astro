@@ -92,70 +92,75 @@ const isActive = (path: string) => Astro.url.pathname === path || Astro.url.path
 
       <div class={classes["team"]}>
         <div class={classes["team__container"]}>
-          <h1 class={classes["team__title"]}>Наша команда</h1>
+          <div class={classes["flex"]}>
+            <h1 class={classes["team__title"]}>Наша команда</h1>
+            <div class={classes["carousel-btns"]}>
+              <button id="prev" class={classes["prev"]}>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                  <path fill="none" d="M0 0h24v24H0V0z"></path>
+                  <path d="M15.61 7.41L14.2 6l-6 6 6 6 1.41-1.41L11.03 12l4.58-4.59z"></path>
+                </svg>
+              </button>
+              <button id="next" class={classes["next"]}>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                  <path fill="none" d="M0 0h24v24H0V0z"></path>
+                  <path d="M10.02 6L8.61 7.41 13.19 12l-4.58 4.59L10.02 18l6-6-6-6z"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
         </div>
-      </div>
-
-      <div class={classes["wrapper"]}>
-        <div id="carousel" class={classes["carousel"]}>
-          <ul id="content" class={classes["carousel__list"]}>
-            <li class={classes["carousel__list__item"]}>
-              <Image src={obi_wan} alt="person" loading="eager" decoding="async" />
-              <div class={classes["carousel__list__item__info"]}>
-                <span>Obi-Wan Kenobi</span>
-                <span>Jedi Master</span>
-              </div>
-            </li>
-
-            <li class={classes["carousel__list__item"]}>
-              <Image src={windu} alt="person" loading="eager" decoding="async" />
-              <div class={classes["carousel__list__item__info"]}>
-                <span>Mace Windu</span>
-                <span>Jedi Master</span>
-              </div>
-            </li>
-
-            <li class={classes["carousel__list__item"]}>
-              <Image src={person_one} alt="person" loading="eager" decoding="async" />
-              <div class={classes["carousel__list__item__info"]}>
-                <span>Yoda</span>
-                <span>Jedi Master</span>
-              </div>
-            </li>
-
-            <li class={classes["carousel__list__item"]}>
-              <Image src={person} alt="person" loading="eager" decoding="async" />
-              <div class={classes["carousel__list__item__info"]}>
-                <span>Plo Koon</span>
-                <span>Jedi Master</span>
-              </div>
-            </li>
-
-            <li class={classes["carousel__list__item"]}>
-              <Image src={person} alt="person" loading="eager" decoding="async" />
-              <div class={classes["carousel__list__item__info"]}>
-                <span>Anakin Skywalker</span>
-                <span>Padawan</span>
-              </div>
-            </li>
-          </ul>
-        </div>
-        <button id="prev" class={classes["prev"]}>
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-            <path fill="none" d="M0 0h24v24H0V0z"></path>
-            <path d="M15.61 7.41L14.2 6l-6 6 6 6 1.41-1.41L11.03 12l4.58-4.59z"></path>
-          </svg>
-        </button>
-        <button id="next" class={classes["next"]}>
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-            <path fill="none" d="M0 0h24v24H0V0z"></path>
-            <path d="M10.02 6L8.61 7.41 13.19 12l-4.58 4.59L10.02 18l6-6-6-6z"></path>
-          </svg>
-        </button>
       </div>
     </section>
-    <ContactUs client:load />
   </main>
+
+  <div class={classes["wrapper"]}>
+    <div id="carousel" class={classes["carousel"]}>
+      <ul class={classes["carousel__list"]}>
+        <li class={classes["carousel__list__item"]}>
+          <Image src={obi_wan} alt="person" loading="eager" decoding="async" />
+          <div class={classes["carousel__list__item__info"]}>
+            <span>Obi-Wan Kenobi</span>
+            <span>Jedi Master</span>
+          </div>
+        </li>
+
+        <li class={classes["carousel__list__item"]}>
+          <Image src={windu} alt="person" loading="eager" decoding="async" />
+          <div class={classes["carousel__list__item__info"]}>
+            <span>Mace Windu</span>
+            <span>Jedi Master</span>
+          </div>
+        </li>
+
+        <li class={classes["carousel__list__item"]}>
+          <Image src={person_one} alt="person" loading="eager" decoding="async" />
+          <div class={classes["carousel__list__item__info"]}>
+            <span>Yoda</span>
+            <span>Jedi Master</span>
+          </div>
+        </li>
+
+        <li class={classes["carousel__list__item"]}>
+          <Image src={person} alt="person" loading="eager" decoding="async" />
+          <div class={classes["carousel__list__item__info"]}>
+            <span>Plo Koon</span>
+            <span>Jedi Master</span>
+          </div>
+        </li>
+
+        <li class={classes["carousel__list__item"]}>
+          <Image src={person} alt="person" loading="eager" decoding="async" />
+          <div class={classes["carousel__list__item__info"]}>
+            <span>Anakin Skywalker</span>
+            <span>Padawan</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <ContactUs client:load />
 
   <Footer />
 </Layout>
@@ -163,22 +168,13 @@ const isActive = (path: string) => Astro.url.pathname === path || Astro.url.path
 <script>
   document.addEventListener("astro:page-load", () => {
     const carousel = document.getElementById("carousel")!;
-    const content = document.getElementById("content")!;
     const next = document.getElementById("next")!;
     const prev = document.getElementById("prev")!;
-
     const GAP = 16;
-
     let width = carousel.offsetWidth;
-
-    function updateButtons() {
-      prev.style.display = carousel.scrollLeft === 0 ? "none" : "flex";
-      next.style.display = carousel.scrollLeft + width >= content.scrollWidth - GAP ? "none" : "flex";
-    }
 
     function scrollCarousel(offset: number) {
       carousel.scrollBy(offset, 0);
-      updateButtons();
     }
 
     next.addEventListener("click", () => scrollCarousel(width + GAP));
@@ -186,9 +182,6 @@ const isActive = (path: string) => Astro.url.pathname === path || Astro.url.path
 
     window?.addEventListener("resize", () => {
       width = carousel.offsetWidth;
-      updateButtons();
     });
-
-    updateButtons();
   });
 </script>
