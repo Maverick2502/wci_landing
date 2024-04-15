@@ -164,6 +164,7 @@
 
         & > span {
           &:first-child {
+            // MARK: CHANGED STYLING
             // font-size: 24px;
             font-weight: 600;
             line-height: 130%;
@@ -178,6 +179,7 @@
             line-height: 100%;
             font-size: 20px;
             color: #a6a4ac;
+            color: #4c4c4c;
           }
         }
       }
