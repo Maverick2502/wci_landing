@@ -16,8 +16,7 @@
 }
 
 .title-block {
-  display: flex;
-  flex-direction: row;
+  @include flex(row, center);
 
   margin-bottom: 24px;
 

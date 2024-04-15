@@ -41,7 +41,7 @@ const ContactUs = () => {
       <div className={classes["contactUs__container"]}>
         <div className={classes["title-block"]}>
           <h1>Давай поговорим</h1>
-          <img src={contactUs.src} alt="Contact us icon" loading="lazy" />
+          <img src={contactUs.src} alt="Contact us icon" width={120} height={120} loading="lazy" />
         </div>
 
         <form className={classes["form"]} onSubmit={handleSubmit(onSubmit)}>
