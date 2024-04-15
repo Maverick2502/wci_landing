@@ -5,7 +5,7 @@ import { accordionData } from "./data";
 import ParallaxText from "@shared/parallaxText/components/index";
 ---
 
-<section class={classes["services"]}>
+<section class={classes["services"]} id="services">
   <ParallaxText client:load headerTitle="Наши услуги" />
   <div class={classes["services__container"]}>
     <Accordion data={accordionData} client:visible />
