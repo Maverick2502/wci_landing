@@ -12,10 +12,15 @@ import classes from "./banner.module.scss";
         <h1>Мы создаем пакеты на заказ для достижения ваших целей</h1>
       </div>
       <div class={classes["banner-block__right-side"]}>
-        <button>
-          <Image width={48} height={48} src={telegram_icon} alt="Call to action icon of Telegram" />
+        <a
+          href="https://t.me/maverick2502"
+          aria-label="Go to an account of WCI on Telegram"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Image width={48} height={48} src={telegram_icon} alt="Contact us on Telegram" />
           <span>Напиcать</span>
-        </button>
+        </a>
       </div>
     </div>
   </div>

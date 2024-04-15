@@ -23,15 +23,13 @@ const isActive = (path: string) => Astro.url.pathname === path || Astro.url.path
     <div class={classes["header__container"]}>
       <a href="/">
         <Image
-          height={50}
-          width={120}
-          format="svg"
-          class={classes["header__image"]}
           src={logo}
           alt="Website Name Logo"
+          format="svg"
+          class={classes["header__image"]}
           width={122}
           height={100}
-          loading="lazy"
+          loading="eager"
           decoding="async"
         />
       </a>
@@ -72,12 +70,10 @@ const isActive = (path: string) => Astro.url.pathname === path || Astro.url.path
             Мы - ведущая компания в области IT-аутсорсинга, предоставляющая широкий спектр услуг по разработке
             программного обеспечения, информационной безопасности, технической поддержке и многому другому.
           </p>
-
           <p>
             Наша миссия - помогать бизнесам улучшать свою эффективность, расширять границы возможностей и достигать
             новых высот в цифровой эпохе.
           </p>
-
           <p>
             С 2024 года мы успешно работаем на рынке IT-аутсорсинга, помогая нашим клиентам воплощать в жизнь самые
             амбициозные проекты. За это время мы завершили более 10+ проектов, утвердившись как надежный партнер с
@@ -96,66 +92,111 @@ const isActive = (path: string) => Astro.url.pathname === path || Astro.url.path
         <div class={classes["team__container"]}>
           <div class={classes["flex"]}>
             <h1 class={classes["team__title"]}>Наша команда</h1>
-            <div class={classes["carousel-btns"]}>
-              <button id="prev" class={classes["prev"]}>
+            <nav class={classes["carousel-btns"]} aria-label="Carousel Navigation">
+              <button id="prev" class={classes["prev"]} aria-label="Previous" role="button">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                   <path fill="none" d="M0 0h24v24H0V0z"></path>
                   <path d="M15.61 7.41L14.2 6l-6 6 6 6 1.41-1.41L11.03 12l4.58-4.59z"></path>
                 </svg>
               </button>
-              <button id="next" class={classes["next"]}>
+              <button id="next" class={classes["next"]} aria-label="Next" role="button">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                   <path fill="none" d="M0 0h24v24H0V0z"></path>
                   <path d="M10.02 6L8.61 7.41 13.19 12l-4.58 4.59L10.02 18l6-6-6-6z"></path>
                 </svg>
               </button>
-            </div>
+            </nav>
           </div>
         </div>
       </div>
     </section>
 
     <div class={classes["wrapper"]}>
-      <div id="carousel" class={classes["carousel"]}>
+      <div id="carousel" class={classes["carousel"]} aria-label="Team Members">
         <ul class={classes["carousel__list"]}>
           <li class={classes["carousel__list__item"]}>
-            <Image src={obi_wan} alt="person" width={500} height={370} loading="lazy" decoding="async" />
-            <div class={classes["carousel__list__item__info"]}>
-              <span>Obi-Wan Kenobi</span>
-              <span>Jedi Master</span>
-            </div>
+            <figure>
+              <Image
+                src={obi_wan}
+                alt="Obi-Wan Kenobi, Jedi Master"
+                width={500}
+                height={370}
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption class={classes["carousel__list__item__info"]}>
+                <span>Obi-Wan Kenobi</span>
+                <span>Jedi Master</span>
+              </figcaption>
+            </figure>
           </li>
 
           <li class={classes["carousel__list__item"]}>
-            <Image src={windu} alt="person" width={500} height={370} loading="lazy" decoding="async" />
-            <div class={classes["carousel__list__item__info"]}>
-              <span>Mace Windu</span>
-              <span>Jedi Master</span>
-            </div>
+            <figure>
+              <Image
+                src={windu}
+                alt="Mace Windu, Jedi Master"
+                width={500}
+                height={370}
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption class={classes["carousel__list__item__info"]}>
+                <span>Mace Windu</span>
+                <span>Jedi Master</span>
+              </figcaption>
+            </figure>
           </li>
 
           <li class={classes["carousel__list__item"]}>
-            <Image src={person_one} alt="person" width={500} height={370} loading="lazy" decoding="async" />
-            <div class={classes["carousel__list__item__info"]}>
-              <span>Yoda</span>
-              <span>Jedi Master</span>
-            </div>
+            <figure>
+              <Image
+                src={person_one}
+                alt="Yoda, Jedi Master"
+                width={500}
+                height={370}
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption class={classes["carousel__list__item__info"]}>
+                <span>Yoda</span>
+                <span>Jedi Master</span>
+              </figcaption>
+            </figure>
           </li>
 
           <li class={classes["carousel__list__item"]}>
-            <Image src={person} alt="person" width={500} height={370} loading="lazy" decoding="async" />
-            <div class={classes["carousel__list__item__info"]}>
-              <span>Plo Koon</span>
-              <span>Jedi Master</span>
-            </div>
+            <figure>
+              <Image
+                src={person}
+                alt="Plo Koon, Jedi Master"
+                width={500}
+                height={370}
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption class={classes["carousel__list__item__info"]}>
+                <span>Plo Koon</span>
+                <span>Jedi Master</span>
+              </figcaption>
+            </figure>
           </li>
 
           <li class={classes["carousel__list__item"]}>
-            <Image src={person} alt="person" width={500} height={370} loading="lazy" decoding="async" />
-            <div class={classes["carousel__list__item__info"]}>
-              <span>Anakin Skywalker</span>
-              <span>Padawan</span>
-            </div>
+            <figure>
+              <Image
+                src={person}
+                alt="Anakin Skywalker, Jedi Master"
+                width={500}
+                height={370}
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption class={classes["carousel__list__item__info"]}>
+                <span>Anakin Skywalker</span>
+                <span>Padawan</span>
+              </figcaption>
+            </figure>
           </li>
         </ul>
       </div>
