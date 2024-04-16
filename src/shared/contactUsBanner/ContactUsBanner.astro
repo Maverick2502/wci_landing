@@ -13,12 +13,20 @@ import classes from "./banner.module.scss";
       </div>
       <div class={classes["banner-block__right-side"]}>
         <a
+          class={classes["shimmer"]}
           href="https://t.me/maverick2502"
           aria-label="Go to an account of WCI on Telegram"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Image width={48} height={48} src={telegram_icon} alt="Contact us on Telegram" />
+          <Image
+            width={48}
+            height={48}
+            src={telegram_icon}
+            alt="Contact us on Telegram"
+            loading="eager"
+            decoding="async"
+          />
           <span>Напиcать</span>
         </a>
       </div>
