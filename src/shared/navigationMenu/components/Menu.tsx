@@ -3,12 +3,24 @@ import { perspective, slideIn } from "../utils/anim";
 import { footerLinks, links } from "../utils/constant";
 import "./menu.scss";
 
-function Menu() {
+interface MenuProps {
+  handleToggle: () => void;
+}
+
+function Menu({ handleToggle }: MenuProps) {
   return (
     <div className="menu-nav">
       <ul className="menu-nav__list">
         {links.map(({ href, title }, i) => (
-          <motion.li key={i} custom={i} variants={perspective} initial="initial" animate="enter" exit="exit">
+          <motion.li
+            onClick={handleToggle}
+            key={i}
+            custom={i}
+            variants={perspective}
+            initial="initial"
+            animate="enter"
+            exit="exit"
+          >
             <a href={href}>{title}</a>
           </motion.li>
         ))}
