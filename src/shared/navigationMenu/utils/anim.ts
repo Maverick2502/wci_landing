@@ -1,7 +1,9 @@
 export const menu = {
   open: {
-    width: "460px",
-    height: "560px",
+    // width: "460px",
+    // height: "560px",
+    width: "auto",
+    height: "auto",
     top: "-20px",
     right: "-20px",
     borderRadius: "15px",
