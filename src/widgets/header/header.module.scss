@@ -3,9 +3,20 @@
 
 .header {
   background-color: $blue-main-color;
+  padding-top: 100px;
+  padding-bottom: 0px;
+  padding-left: 20px;
+  padding-right: 20px;
+
+  @include media-mobile {
+    padding-top: 50px;
+  }
 
   &__container {
     @include flex(row, space-between, center);
+
+    height: 100%;
+    max-height: 60px;
 
     position: relative;
     z-index: 2;
@@ -15,17 +26,26 @@
 
     margin: 0 auto;
 
-    padding-top: 100px;
-    padding-bottom: 0px;
-    padding-left: 20px;
-    padding-right: 20px;
+    @include media-mobile {
+      max-height: 40px;
+    }
+  }
 
-    height: 100%;
+  &__image {
+    @include media-mobile {
+      width: 72px;
+      height: 30px;
+    }
   }
 
   &__btn-groups {
     display: flex;
+    align-items: center;
     gap: 32px;
+
+    @include media-mobile {
+      gap: 16px;
+    }
   }
 }
 
@@ -41,6 +61,13 @@
 
   padding: 4px;
 
+  @include media-mobile {
+    width: 80px;
+    max-height: 40px;
+
+    border-radius: 10px;
+  }
+
   &__switcher {
     display: grid;
     place-content: center;
@@ -55,6 +82,10 @@
     font-size: 18px;
     font-weight: 700;
     font-family: "Inter Variable", sans-serif;
+
+    @include media-mobile {
+      font-size: 12px;
+    }
 
     &-active {
       background-color: #fff;

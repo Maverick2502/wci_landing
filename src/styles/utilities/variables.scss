@@ -19,10 +19,11 @@ $btn-hover: #172b41;
 $btn-active: #001228;
 
 // Breakpoints
-$breakpoint-sm: 576px;
-$breakpoint-md: 768px;
-$breakpoint-lg: 992px;
-$breakpoint-xl: 1200px;
+$breakpoint-mobile: 500px;
+$breakpoint-tablet: 768px;
+$breakpoint-tablet-horizontal: 1080px;
+$breakpoint-laptop: 1200px;
+$breakpoint-desktop: 1920px;
 
 // Media params
 $mouse-device: "(hover: hover) and (pointer: fine)";

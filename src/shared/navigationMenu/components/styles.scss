@@ -1,15 +1,23 @@
 @import "../../../styles/utilities/variables.scss";
+@import "../../../styles/utilities/mixins.scss";
 
 .nav-menu-container {
   position: relative;
   top: 0px;
 
-  width: 138px;
+  // width: 138px;
+  // height: 60px;
+  width: 60px;
   height: 60px;
 
   border-radius: $btn-border-radius-xl;
 
   z-index: 2;
+
+  @include media-mobile {
+    width: 40px;
+    height: 40px;
+  }
 
   &__content {
     position: absolute;

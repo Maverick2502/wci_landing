@@ -8,11 +8,11 @@ export const menu = {
     transition: { duration: 0.75, type: "tween", ease: [0.76, 0, 0.24, 1] },
   },
   closed: {
-    width: "138px",
-    height: "60px",
+    width: "40px",
+    height: "40px",
     top: "0px",
     right: "0px",
-    borderRadius: "15px",
+    borderRadius: "10px",
     transition: { duration: 0.75, delay: 0.35, type: "tween", ease: [0.76, 0, 0.24, 1] },
   },
 };
