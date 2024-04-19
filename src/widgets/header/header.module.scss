@@ -3,20 +3,11 @@
 
 .header {
   background-color: $blue-main-color;
-  padding-top: 100px;
-  padding-bottom: 0px;
-  padding-left: 20px;
-  padding-right: 20px;
-
-  @include media-mobile {
-    padding-top: 50px;
-  }
 
   &__container {
     @include flex(row, space-between, center);
 
-    height: 100%;
-    max-height: 60px;
+    padding: 100px 20px;
 
     position: relative;
     z-index: 2;
@@ -27,7 +18,10 @@
     margin: 0 auto;
 
     @include media-mobile {
-      max-height: 40px;
+      padding-top: 24px;
+      padding-right: 20px;
+      padding-bottom: 50px;
+      padding-left: 20px;
     }
   }
 
@@ -48,6 +42,54 @@
     }
   }
 }
+
+// .header {
+//   background-color: $blue-main-color;
+//   padding-top: 100px;
+//   padding-bottom: 0px;
+//   padding-left: 20px;
+//   padding-right: 20px;
+
+//   @include media-mobile {
+//     padding-top: 50px;
+//   }
+
+//   &__container {
+//     @include flex(row, space-between, center);
+
+//     height: 100%;
+//     max-height: 60px;
+
+//     position: relative;
+//     z-index: 2;
+
+//     width: 100%;
+//     max-width: $desktop-width;
+
+//     margin: 0 auto;
+
+//     @include media-mobile {
+//       max-height: 40px;
+//     }
+//   }
+
+//   &__image {
+//     @include media-mobile {
+//       width: 72px;
+//       height: 30px;
+//     }
+//   }
+
+// &__btn-groups {
+//   display: flex;
+//   align-items: center;
+//   gap: 32px;
+
+//   @include media-mobile {
+//     gap: 16px;
+//   }
+// }
+// }
 
 .language-switcher {
   display: flex;
