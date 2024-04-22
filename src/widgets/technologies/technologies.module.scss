@@ -24,6 +24,13 @@
 
       border-top: 1px solid #000;
 
+      @include media-mobile {
+        display: flex;
+        flex-direction: column;
+
+        gap: 16px;
+      }
+
       &:last-child {
         padding: 68px 0;
         border-bottom: 1px solid #000;
@@ -34,6 +41,10 @@
         gap: 16px;
 
         width: 50%;
+
+        @include media-mobile {
+          width: 100%;
+        }
 
         & > span {
           margin-top: 8px;
@@ -54,6 +65,10 @@
             gap: 8px;
 
             margin-top: 16px;
+
+            @include media-mobile {
+              max-width: 100%;
+            }
 
             & > li {
               background-color: $blue-main-color;
@@ -77,16 +92,29 @@
         display: flex;
         width: 50%;
 
+        @include media-mobile {
+          width: 100%;
+        }
+
         & > ul {
           display: flex;
           flex-direction: column;
 
+          @include media-mobile {
+            margin-left: 55px;
+          }
+
           & > li {
-            & > span {
-              color: $grey-color;
-              font-size: 24px;
-              font-style: normal;
-              font-weight: 600;
+            color: $grey-color;
+            font-size: 24px;
+            font-weight: 600;
+            line-height: 130%;
+            font-family: "Inter Variable", sans-serif;
+
+            @include media-mobile {
+              width: 100%;
+              font-size: 18px;
+              font-weight: 400;
               line-height: 130%;
             }
           }

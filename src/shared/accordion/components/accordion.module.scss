@@ -20,7 +20,13 @@
       cursor: pointer;
 
       @include media-mobile {
+        all: unset;
+
         display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        width: 100%;
       }
 
       & > h1 {
