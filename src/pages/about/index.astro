@@ -1,64 +1,22 @@
 ---
-import logo from "@assets/icons/wci.svg";
 import obi_wan from "@assets/images/obi_wan.webp";
 import person from "@assets/images/person_mockup.png";
 import person_one from "@assets/images/person_mockup_1.png";
 import team from "@assets/images/team.webp";
 import windu from "@assets/images/windu.webp";
 import Layout from "@layouts/Layout.astro";
-import NavigationMenu from "@shared/navigationMenu/components";
 import classes from "@styles/pages/about.module.scss";
 import ContactUs from "@widgets/contactUs/ContactUs";
 import Footer from "@widgets/footer/Footer.astro";
+import Header from "@widgets/header/Header.astro";
 import { Image } from "astro:assets";
 import { changeLanguage } from "i18next";
 
 changeLanguage("ru");
-
-const isActive = (path: string) => Astro.url.pathname === path || Astro.url.pathname.startsWith(path + "/");
 ---
 
 <Layout title="About us | WCI">
-  <header class={classes["header"]}>
-    <div class={classes["header__container"]}>
-      <a href="/">
-        <Image
-          src={logo}
-          alt="Website Name Logo"
-          format="svg"
-          class={classes["header__image"]}
-          width={122}
-          height={100}
-          loading="eager"
-          decoding="async"
-        />
-      </a>
-
-      <div class={classes["header__btn-groups"]}>
-        <div class={classes["language-switcher"]}>
-          <a
-            href="/en"
-            aria-label="English"
-            class:list={[
-              classes["language-switcher__switcher"],
-              { [classes["language-switcher__switcher-active"]]: isActive("/en") },
-            ]}
-          >
-            EN
-          </a>
-          <a
-            href="/"
-            aria-label="Russian"
-            class:list={[
-              classes["language-switcher__switcher"],
-              { [classes["language-switcher__switcher-active"]]: isActive("/") },
-            ]}>RU</a
-          >
-        </div>
-        <NavigationMenu client:load />
-      </div>
-    </div>
-  </header>
+  <Header />
 
   <main>
     <section class={classes["about"]}>

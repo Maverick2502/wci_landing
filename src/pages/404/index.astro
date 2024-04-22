@@ -2,7 +2,7 @@
 import { changeLanguage } from "i18next";
 import classes from "@styles/pages/404.module.scss";
 import Layout from "@layouts/Layout.astro";
-import icon from "@assets/icons/404.svg";
+import icon from "@assets/icons/404_icon.svg";
 import { Image } from "astro:assets";
 
 changeLanguage("ru");
@@ -14,15 +14,7 @@ changeLanguage("ru");
       <div class={classes["inner-circle"]}>
         <div>
           <span>4</span>
-          <Image
-            src={icon}
-            width={icon.width}
-            height={icon.height}
-            alt="3D icon of zero"
-            loading="eager"
-            decoding="async"
-            format="svg"
-          />
+          <Image src={icon} alt="3D icon of zero" loading="eager" decoding="async" />
           <span>4</span>
         </div>
         <div>

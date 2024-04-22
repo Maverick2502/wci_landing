@@ -1,62 +1,19 @@
 @import "../utilities/variables.scss";
 @import "../utilities/mixins.scss";
 
-.header {
-  background-color: $blue-main-color;
-
-  &__container {
-    @include flex(row, space-between, center);
-
-    max-width: $desktop-width;
-    margin: 0 auto;
-    padding: 100px 20px;
-  }
-
-  &__btn-groups {
-    display: flex;
-    gap: 32px;
-  }
-}
-
-.language-switcher {
-  display: flex;
-  flex-direction: row;
-
-  width: 119px;
-  height: 60px;
-
-  border-radius: $btn-border-radius-xl;
-  border: 1px solid #fff;
-
-  padding: 4px;
-
-  &__switcher {
-    display: grid;
-    place-content: center;
-
-    width: 100%;
-    height: 100%;
-
-    border-radius: inherit;
-    background-color: transparent;
-    color: #fff;
-
-    font-size: 18px;
-    font-weight: 700;
-    font-family: "Inter Variable", sans-serif;
-
-    &-active {
-      background-color: #fff;
-      color: $blue-main-color;
-    }
-  }
-}
-
 .about {
   &__container {
     max-width: $desktop-width;
     margin: 0 auto;
-    padding: 100px 20px;
+
+    padding-top: 100px;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-bottom: 50px;
+
+    @include media-mobile {
+      padding: 50px 20px;
+    }
   }
 
   &__title {
@@ -64,6 +21,13 @@
     font-weight: 700;
     line-height: 130%; /* 78px */
     text-transform: uppercase;
+
+    margin: 0px;
+
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-left: 0px;
+    margin-bottom: 50px;
   }
 
   &__content {
@@ -88,12 +52,19 @@
   &__container {
     max-width: $desktop-width;
     margin: 0 auto;
-    padding: 60px 0;
+    // padding: 60px 0;
   }
 
   &__img {
     display: block;
     margin: 0 auto;
+
+    object-fit: cover;
+
+    @include media-mobile {
+      width: 100%;
+      height: auto;
+    }
   }
 }
 
@@ -109,8 +80,12 @@
     line-height: 130%; /* 78px */
     text-transform: uppercase;
 
-    margin: 0;
+    margin: 50px 20px;
     padding: 0;
+
+    @include media-mobile {
+      margin: 50px 20px;
+    }
   }
 }
 
@@ -118,6 +93,10 @@
   width: 100%;
 
   margin-bottom: 100px;
+
+  @include media-mobile {
+    margin-bottom: 50px;
+  }
 }
 
 .carousel {
@@ -137,6 +116,10 @@
 
     max-width: $desktop-width;
     margin: 0 auto; // Starts with-left margin
+
+    @include media-mobile {
+      margin-left: 20px;
+    }
 
     &__item {
       & > figure {
@@ -165,7 +148,7 @@
         & > span {
           &:first-child {
             // MARK: CHANGED STYLING
-            // font-size: 24px;
+            font-size: 24px;
             font-weight: 600;
             line-height: 130%;
             font-size: 28px;
@@ -174,10 +157,9 @@
 
           &:last-child {
             font-family: "Inter variable", sans-serif;
-            // font-size: 14px;
             font-weight: 400;
             line-height: 100%;
-            font-size: 20px;
+            font-size: 18px;
             color: #a6a4ac;
             color: #4c4c4c;
           }
@@ -206,12 +188,13 @@
       border: none;
       border-radius: 50%;
     }
+
+    @include media-mobile {
+      display: none;
+    }
   }
 }
 
 .flex {
   @include flex(row, space-between);
-
-  margin-top: 100px;
-  margin-bottom: 50px;
 }
