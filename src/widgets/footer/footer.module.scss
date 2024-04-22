@@ -16,6 +16,10 @@
     margin: 0 auto;
 
     padding: 100px 20px;
+
+    @include media-mobile {
+      padding: 50px 20px;
+    }
   }
 
   a,
@@ -52,6 +56,12 @@
   flex-direction: row;
 
   gap: 100px;
+
+  @include media-mobile {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
 
   &__doc-list {
     display: flex;
