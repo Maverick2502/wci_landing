@@ -53,7 +53,7 @@ const ContactUs = () => {
             id={`${id}-fullName`}
             aria-labelledby={`input-label-fullName`}
             type="text"
-            placeholder="fullName"
+            placeholder="ИМЯ"
             className={classes["form__input"]}
             {...register("fullName", {
               pattern: LETTERS_REG_EX,
@@ -71,7 +71,7 @@ const ContactUs = () => {
             id={`${id}-email`}
             aria-labelledby={`input-label-email`}
             type="email"
-            placeholder="email"
+            placeholder="ПОЧТА"
             className={classes["form__input"]}
             {...register("email", {
               required: true,
@@ -88,7 +88,7 @@ const ContactUs = () => {
             autoComplete="off"
             id={`${id}-message`}
             aria-labelledby={`input-label-message`}
-            placeholder="message..."
+            placeholder="СООБЩЕНИЕ..."
             className={classes["form__input"]}
             {...register("message", {
               required: true,
