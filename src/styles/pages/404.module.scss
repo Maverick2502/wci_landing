@@ -1,6 +1,13 @@
 @import "../utilities/mixins.scss";
 @import "../utilities/variables.scss";
 
+.image {
+  @include media-mobile {
+    width: 155px;
+    height: auto;
+  }
+}
+
 .container-notFound {
   @include flex();
 
@@ -8,6 +15,10 @@
 
   overflow: hidden;
   height: 100vh;
+
+  @include media-mobile {
+    height: 100svh;
+  }
 }
 
 .outer-circle {
@@ -29,6 +40,8 @@
   text-align: center;
 
   & > div {
+    padding: 0 20px;
+
     &:first-child {
       @include flex();
 
@@ -37,6 +50,10 @@
         font-weight: 110;
         text-transform: uppercase;
         color: #fff;
+
+        @include media-mobile {
+          font-size: 155px;
+        }
       }
     }
 
@@ -50,6 +67,10 @@
         color: #fff;
         font-size: 48px;
         line-height: 130%;
+
+        @include media-mobile {
+          font-size: 24px;
+        }
       }
 
       & > button {
