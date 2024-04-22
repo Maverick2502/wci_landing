@@ -4,11 +4,11 @@
   flex-grow: 1;
 }
 
-.container > *:not(:last-of-type):not(:nth-last-of-type(1)) {
-  margin-bottom: 100px;
-}
+// .container > *:not(:last-of-type):not(:nth-last-of-type(1)) {
+//   margin-bottom: 100px;
+// }
 
-.container > :last-of-type,
-.container > :nth-last-of-type(1) {
-  margin-bottom: 0;
-}
+// .container > :last-of-type,
+// .container > :nth-last-of-type(1) {
+//   margin-bottom: 0;
+// }

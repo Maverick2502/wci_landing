@@ -9,14 +9,15 @@ import classes from "./hero.module.scss";
 <section class={classes["hero"]} role="banner">
   <div class={classes["hero__container"]}>
     <Image
-      width={1528}
-      height={883}
+      width={wciim.width}
+      height={wciim.height}
       id="hero__image"
       class={classes["hero__image"]}
       src={wciim}
       alt="Logo for WCI"
       loading="eager"
       decoding="async"
+      format="webp"
     />
 
     <div transition:animate={slide({ duration: "1.2s" })} class={classes["hero__content"]}>

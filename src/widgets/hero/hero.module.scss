@@ -34,20 +34,6 @@
     @include media-mobile {
       display: none;
     }
-
-    &__mobile {
-      display: none;
-      @include media-mobile {
-        display: flex;
-        position: absolute;
-        object-fit: contain;
-
-        height: 100%;
-        width: 100%;
-
-        z-index: 1;
-      }
-    }
   }
 
   &__content {
