@@ -9,15 +9,17 @@
   height: 100%;
 
   @include media-mobile {
-    padding: 100px 34px 38px 34px;
+    padding: 70px 20px;
+
+    gap: 40px;
   }
 
   width: 460px;
   height: 560px;
 
   @include media-mobile {
-    width: 370px;
-    height: 408px;
+    width: 300px;
+    height: 300px;
   }
 
   &__list {
@@ -27,7 +29,7 @@
     gap: 36px;
 
     @include media-mobile {
-      gap: 34px;
+      gap: 20px;
     }
 
     & > li {
