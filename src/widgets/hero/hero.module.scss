@@ -101,8 +101,7 @@
 
     cursor: pointer;
 
-    // margin-bottom: 100px;
-    // margin-bottom: 50px;
+    margin-bottom: 50px;
 
     @include media-mobile {
       padding: 20px;
@@ -114,142 +113,7 @@
   }
 }
 
-.heros {
-  position: relative;
-
-  background-color: $blue-main-color;
-  min-height: calc(100vh - 260px);
-
-  &__container {
-    display: flex;
-    flex-direction: column;
-
-    position: relative;
-
-    max-width: $desktop-width;
-    margin: 0 auto;
-
-    padding-top: 0px;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-bottom: 0px;
-    // padding-bottom: 110px;
-
-    border: 1px solid #000;
-
-    @include media-mobile {
-    }
-  }
-
-  &__image {
-    position: absolute;
-    object-fit: contain;
-
-    top: -70px;
-    left: 0;
-
-    opacity: 0.6;
-    height: 100%;
-    width: 100%;
-
-    z-index: 1;
-
-    @include media-mobile {
-      display: none;
-    }
-
-    &__mobile {
-      display: none;
-      @include media-mobile {
-        display: flex;
-        position: absolute;
-        object-fit: contain;
-
-        height: 100%;
-        width: 100%;
-
-        z-index: 1;
-      }
-    }
-  }
-
-  &__content {
-    position: relative;
-    z-index: 1;
-
-    @include media-mobile {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      text-align: center;
-      gap: 16px;
-    }
-
-    & > h1 {
-      color: #fff;
-      font-size: 110px;
-      font-weight: 700;
-      line-height: 130%; /* 143px */
-      text-transform: uppercase;
-      font-family: "Geologica Variable", sans-serif;
-
-      margin: 0;
-      padding: 0;
-
-      word-spacing: 10px;
-
-      @include media-mobile {
-        font-size: 44px;
-        word-spacing: 0px;
-      }
-    }
-
-    & > p {
-      color: #fff;
-      font-size: 32px;
-      font-weight: 400;
-      line-height: 130%; /* 41.6px */
-      font-family: "Inter Variable", sans-serif;
-
-      max-width: 790px;
-      margin: 0 0 64px 0;
-
-      @include media-mobile {
-        font-size: 14px;
-        max-width: 300px;
-        margin: 0 auto;
-      }
-    }
-  }
-
-  &__btn {
-    padding: 24px 0px;
-
-    max-width: 290px;
-    width: 100%;
-
-    border-radius: $btn-border-radius-xl;
-    font-size: 24px;
-    font-weight: 700;
-    line-height: 130%;
-    font-family: "Geologica Variable", sans-serif;
-    color: $black-main-color;
-
-    background-color: #fff;
-
-    cursor: pointer;
-
-    @include media-mobile {
-      padding: 20px;
-      font-size: 14px;
-
-      max-width: 160px;
-      width: 100%;
-    }
-  }
-}
-
-.hero__btns {
+.hero__btn {
   position: relative;
   overflow: hidden;
   display: inline-block;

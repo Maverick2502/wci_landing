@@ -36,7 +36,7 @@
         margin: 22px 0px;
 
         @include media-mobile {
-          font-size: 16px;
+          font-size: 20px;
         }
       }
     }
@@ -53,6 +53,10 @@
         font-family: "Geologica Variable", sans-serif;
 
         padding: 0 12px;
+
+        @include media-mobile {
+          font-size: 14px;
+        }
       }
     }
   }
