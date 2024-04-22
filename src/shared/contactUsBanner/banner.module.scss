@@ -6,6 +6,10 @@
   padding: 76px 200px;
   color: #fff;
 
+  @include media-mobile {
+    padding: 50px 20px;
+  }
+
   &__container {
     display: flex;
     flex-direction: column;
@@ -21,6 +25,12 @@
   display: grid;
   grid-template-columns: 1fr 300px;
   gap: 72px;
+
+  @include media-mobile {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
 }
 
 .banner-block {
@@ -33,6 +43,10 @@
       text-transform: uppercase;
 
       margin: 0;
+
+      @include media-mobile {
+        font-size: 28px;
+      }
     }
   }
 
@@ -41,6 +55,10 @@
     flex-direction: column;
     justify-content: center;
     gap: 16px;
+
+    @include media-mobile {
+      margin: 0 auto;
+    }
 
     & > a {
       display: flex;
