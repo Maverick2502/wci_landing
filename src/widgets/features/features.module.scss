@@ -20,12 +20,22 @@
   grid-template-columns: repeat(4, 250px);
   place-content: center;
   gap: 12px;
+
+  @include media-mobile {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+  }
 }
 
 .card {
   background-color: #eef3f9;
   border-radius: 10px;
   padding: 44px;
+
+  @include media-mobile {
+    width: 250px;
+  }
 
   &__flex {
     @include flex(column);
@@ -54,5 +64,9 @@
     // MARK:In order to pass ally
     // color: $grey-color;
     color: #4c4c4c;
+
+    @include media-mobile {
+      font-size: 18px;
+    }
   }
 }
