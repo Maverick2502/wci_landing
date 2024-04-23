@@ -25,6 +25,12 @@
   }
 }
 
+@mixin media-tablet-horizontal {
+  @media (max-width: $breakpoint-tablet-horizontal) {
+    @content;
+  }
+}
+
 @mixin media-desktop {
   @media only screen and (max-width: $breakpoint-desktop) {
     @content;
