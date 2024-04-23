@@ -11,23 +11,15 @@
     }
 
     &__header {
-      @include flex(row, space-between, center);
+      all: unset;
+
+      @include flex(row, space-between);
 
       width: 100%;
 
       background-color: #fff;
 
       cursor: pointer;
-
-      @include media-mobile {
-        all: unset;
-
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-
-        width: 100%;
-      }
 
       & > h1 {
         color: #454545;
