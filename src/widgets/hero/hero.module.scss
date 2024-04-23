@@ -17,7 +17,7 @@
     padding-bottom: 50px;
 
     @include media-mobile {
-      padding-bottom: 0px;
+      padding: 0px;
     }
   }
 
@@ -34,13 +34,20 @@
 
     overflow: hidden;
 
-    @include media-mobile {
-      display: none;
+    @include media-laptop {
+      max-width: 1200px;
+      left: -20px;
     }
 
     @include media-tablet {
-      width: auto;
-      height: 100%;
+      width: 100%;
+      max-width: 768px;
+      left: 0;
+    }
+
+    @include media-mobile {
+      display: none;
+      left: 0;
     }
   }
 
@@ -68,13 +75,12 @@
 
       word-spacing: 10px;
 
-      @include media-mobile {
-        font-size: 44px;
-        word-spacing: 0px;
+      @include media-laptop {
+        font-size: 60px;
       }
 
-      @include media-laptop {
-        font-size: 80px;
+      @include media-mobile {
+        font-size: 44px;
       }
     }
 
