@@ -6,7 +6,7 @@
   padding: 76px 20px;
   color: #fff;
 
-  @include media-tablet {
+  @include media-mobile {
     padding: 50px 20px;
   }
 
@@ -16,8 +16,11 @@
 
     max-width: $desktop-width;
 
-    padding: 0 20px;
     margin: 0 auto;
+
+    // @include media-mobile {
+    //   all: unset;
+    // }
   }
 }
 
@@ -26,15 +29,13 @@
   grid-template-columns: 1fr 300px;
   gap: 72px;
 
-  @include media-tablet {
-    display: flex;
-    flex-direction: column;
-    gap: 32px;
-  }
-
   @include media-laptop {
     display: flex;
     flex-direction: column;
+  }
+
+  @include media-mobile {
+    gap: 32px;
   }
 }
 
@@ -49,7 +50,7 @@
 
       margin: 0;
 
-      @include media-tablet {
+      @include media-mobile {
         font-size: 28px;
         text-align: center;
       }
@@ -57,9 +58,7 @@
   }
 
   &__right-side {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    @include flex();
     gap: 16px;
 
     @include media-laptop {
@@ -67,9 +66,7 @@
     }
 
     & > a {
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      @include flex();
 
       gap: 8px;
 
@@ -82,14 +79,31 @@
 
       cursor: pointer;
 
+      @include media-mobile {
+        width: 100%;
+        max-width: 200px;
+        height: 60px;
+        padding: 24px 12px;
+      }
+
       & > span {
         color: $black-main-color;
-        text-align: center;
         font-size: 24px;
         font-weight: 600;
         line-height: 130%;
 
         font-family: "Geologica Variable", sans-serif;
+
+        @include media-mobile {
+          font-size: 16px;
+        }
+      }
+
+      & > img {
+        @include media-mobile {
+          width: 28px;
+          height: 28px;
+        }
       }
     }
   }
