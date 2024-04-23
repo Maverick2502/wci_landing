@@ -2,6 +2,9 @@
 @import "../../styles/utilities/mixins.scss";
 
 .features {
+  position: relative;
+  overflow: hidden;
+
   background-color: #fff;
 
   &__container {
@@ -20,16 +23,6 @@
   grid-template-columns: repeat(4, 250px);
   place-content: center;
   gap: 12px;
-
-  @include media-mobile {
-    // display: flex;
-    // flex-direction: column;
-    // margin: 0 auto;
-    all: unset;
-    display: flex;
-    gap: 12px;
-    overflow: scroll;
-  }
 }
 
 .card {
