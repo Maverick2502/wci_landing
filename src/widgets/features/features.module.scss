@@ -23,6 +23,18 @@
   grid-template-columns: repeat(4, 250px);
   place-content: center;
   gap: 12px;
+
+  @include media-laptop {
+    grid-template-columns: repeat(2, 300px);
+  }
+
+  @include media-tablet {
+    all: unset;
+
+    display: flex;
+    gap: 16px;
+    overflow: scroll;
+  }
 }
 
 .card {
