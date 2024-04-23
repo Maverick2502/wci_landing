@@ -93,7 +93,9 @@
       font-family: "Inter Variable", sans-serif;
 
       max-width: 790px;
-      margin: 0 0 64px 0;
+
+      margin-top: 16px;
+      margin-bottom: 32px;
 
       @include media-mobile {
         font-size: 14px;
@@ -102,37 +104,42 @@
       }
     }
   }
+}
 
-  &__btn {
+.btn-hero {
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+
+  background-color: #fff;
+
+  padding: 24px 50px;
+
+  border-radius: $btn-border-radius-xl;
+
+  width: 100%;
+  max-width: 300px;
+
+  margin-bottom: 50px;
+
+  & > span {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 130%;
+    color: $black-main-color;
+  }
+
+  @include media-mobile {
+    max-width: 200px;
     padding: 24px 0px;
 
-    max-width: 290px;
-    width: 100%;
-
-    border-radius: $btn-border-radius-xl;
-    font-size: 24px;
-    font-weight: 700;
-    line-height: 130%;
-    font-family: "Geologica Variable", sans-serif;
-    color: $black-main-color;
-
-    background-color: #fff;
-
-    cursor: pointer;
-
-    margin-bottom: 50px;
-
-    @include media-mobile {
-      padding: 20px;
-      font-size: 14px;
-
-      max-width: 160px;
-      width: 100%;
+    & > span {
+      font-size: 16px;
     }
   }
 }
 
-.hero__btn {
+.btn-hero {
   position: relative;
   overflow: hidden;
   display: inline-block;
@@ -162,7 +169,7 @@
   }
 }
 
-.hero:hover .hero__btn:after {
+.hero:hover .btn-hero:after {
   opacity: 1;
   top: -30%;
   left: -30%;
