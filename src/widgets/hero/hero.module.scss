@@ -39,8 +39,8 @@
     }
 
     @include media-tablet {
-      width: 768px;
-      left: 0;
+      width: auto;
+      height: 100%;
     }
   }
 
@@ -73,9 +73,8 @@
         word-spacing: 0px;
       }
 
-      @include media-tablet {
+      @include media-laptop {
         font-size: 80px;
-        word-spacing: 0px;
       }
     }
 
