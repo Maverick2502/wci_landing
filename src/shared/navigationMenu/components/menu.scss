@@ -67,7 +67,7 @@
         color: #4c4c4c;
 
         &:hover {
-          color: #000;
+          color: $black-main-color;
         }
 
         @include media-mobile {
@@ -92,6 +92,10 @@
         font-size: 16px;
         font-weight: 510;
         color: #8c8c8c;
+
+        &:hover {
+          color: $black-main-color;
+        }
 
         @include media-mobile {
           font-size: 12px;
