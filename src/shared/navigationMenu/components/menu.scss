@@ -36,27 +36,30 @@
       position: relative;
       transition: margin-left 0.4s ease-in-out;
 
-      &::before {
-        content: url("../../../assets/icons/ellipsis.svg");
-        position: absolute;
-        left: -20px;
-        top: 25%;
-        opacity: 0;
-      }
-
-      &:hover {
-        transition: margin-left 0.4s ease-in-out;
-        margin-left: 20px;
-
-        &::before {
-          opacity: 1;
-          transition: opacity 0.4s ease-in-out 0.25ms;
-        }
-      }
-
       :focus-visible {
         outline: 2px solid #454545;
         border-radius: $card-border-radius;
+      }
+
+      // Prevent hover on touch devices
+      @media ($mouse-device) {
+        &::before {
+          content: url("../../../assets/icons/ellipsis.svg");
+          position: absolute;
+          left: -20px;
+          top: 25%;
+          opacity: 0;
+        }
+
+        &:hover {
+          transition: margin-left 0.4s ease-in-out;
+          margin-left: 20px;
+
+          &::before {
+            opacity: 1;
+            transition: opacity 0.4s ease-in-out 0.25ms;
+          }
+        }
       }
 
       a {
