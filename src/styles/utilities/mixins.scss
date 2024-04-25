@@ -42,3 +42,15 @@
     @content;
   }
 }
+
+@mixin media-custom-min($width) {
+  @media (min-width: ($width - 1px)) {
+    @content;
+  }
+}
+
+@mixin media-custom-max($width) {
+  @media (max-width: ($width - 1px)) {
+    @content;
+  }
+}

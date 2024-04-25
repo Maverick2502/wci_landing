@@ -43,26 +43,24 @@
 
       // Prevent hover on touch devices
       @media ($mouse-device) {
-        &::before {
-          content: url("../../../assets/icons/ellipsis.svg");
-          position: absolute;
-          left: -20px;
-          top: 25%;
-          opacity: 0;
-          width: 25px;
-        }
-
-        &:hover {
-          transition: margin-left 0.4s ease-in-out;
-          margin-left: 20px;
-
-          a {
-            color: $black-main-color;
+        @include media-custom-min($breakpoint-tablet-horizontal) {
+          &::before {
+            content: url("../../../assets/icons/ellipsis.svg");
+            position: absolute;
+            left: -20px;
+            top: 25%;
+            opacity: 0;
+            width: 25px;
           }
 
-          &::before {
-            opacity: 1;
-            transition: opacity 0.4s ease-in-out 0.25ms;
+          &:hover {
+            transition: margin-left 0.4s ease-in-out;
+            margin-left: 20px;
+
+            &::before {
+              opacity: 1;
+              transition: opacity 0.4s ease-in-out 0.25ms;
+            }
           }
         }
       }
