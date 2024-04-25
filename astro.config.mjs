@@ -1,11 +1,14 @@
 import react from "@astrojs/react";
 import sitemap from "@astrojs/sitemap";
 import astroI18next from "astro-i18next";
-import { defineConfig } from "astro/config";
+import { defineConfig, squooshImageService } from "astro/config";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://wci-landing.vercel.app/",
+  image: {
+    service: squooshImageService(),
+  },
+  site: "https://wci-landing.vercel.app",
   prefetch: {
     prefetchAll: false,
   },
