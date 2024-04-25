@@ -1,23 +1,30 @@
 {
-  "short_name": "WCI - Outsourcing",
-  "name": "WCI - Your IT Outsourcing Partner",
+  "short_name": "WCI",
+  "name": "Your IT Outsourcing Partner",
   "description": "WCI provides expert IT outsourcing solutions to streamline your business operations and drive efficiency.",
+  "id": "/",
   "start_url": "/",
-  "display": "fullscreen",
+  "display": "minimal-ui",
   "theme_color": "#005ee0",
   "background_color": "#fff",
   "icons": [
     {
-      "src": "/ms-icon-150x150.png",
-      "sizes": "150x150",
+      "src": "/icon-192.png",
+      "sizes": "192x192",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "/ms-icon-310x310.png",
-      "sizes": "310x310",
+      "src": "/icon-512.png",
+      "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"
+    },
+    {
+      "src": "/maskable-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
     }
   ]
 }
