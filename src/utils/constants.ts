@@ -1,14 +1,14 @@
 import ogImageSrc from "../../public/og_image.png";
 
 export const SITE = {
-  title: "WCI - Your IT Outsourcing Partner",
+  title: "WCI",
   tagline: "Top-quality Developers",
   description:
     "WCI provides expert IT outsourcing solutions to streamline your business operations and drive efficiency..",
   description_short:
     "WCI provides expert IT outsourcing solutions to streamline your business operations and drive efficiency.",
   url: "https://wci-landing.vercel.app",
-  author: "WCI",
+  author: "Nurullo Khuvaidullaev",
 };
 
 export const SEO = {
@@ -35,7 +35,7 @@ export const OG = {
   locale: "en_US",
   type: "website",
   url: SITE.url,
-  title: SITE.title,
+  title: `${SITE.title}: Your IT Outsourcing Partner`,
   description:
     "WCI provides expert IT outsourcing solutions to streamline your business operations and drive efficiency.",
   image: ogImageSrc,

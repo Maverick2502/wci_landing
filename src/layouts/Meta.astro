@@ -2,7 +2,6 @@
 import { getImage } from "astro:assets";
 import { OG } from "utils/constants";
 import { SEO, SITE } from "utils/constants";
-import faviconSvgSrc from "../../public/favicon.svg";
 import faviconSrc from "../../public/apple-icon-180x180.png";
 
 const defaultProps = {
@@ -12,7 +11,6 @@ const defaultProps = {
 
 const { meta = defaultProps.meta, structuredData = defaultProps.structuredData } = Astro.props;
 
-// Define the metadata for your website and individual pages
 const author = SITE.author;
 const ogTitle = OG.title;
 const ogDescription = OG.description;
@@ -21,14 +19,9 @@ const socialImageRes = await getImage({
   width: 300,
   height: 180,
 });
-const socialImage = Astro.url.origin + socialImageRes.src; // Get the full URL of the image (https://stackoverflow.com/a/9858694)
+const socialImage = Astro.url.origin + socialImageRes.src;
 
-const URL = `${Astro.site}`; // Set the website URL in astro.config.mjs
-
-const faviconSvg = await getImage({
-  src: faviconSvgSrc,
-  format: "svg",
-});
+const URL = `${Astro.site}`;
 
 const appleTouchIcon = await getImage({
   src: faviconSrc,
@@ -71,15 +64,13 @@ const appleTouchIcon = await getImage({
 
 <!-- Links to the webmanifest and sitemap -->
 <link rel="manifest" href="/manifest.webmanifest" />
-<!-- https://docs.astro.build/en/guides/integrations-guide/sitemap/ -->
 <link rel="sitemap" href="/sitemap-index.xml" />
 
 <!-- Links for favicons -->
 <link href="/favicon.ico" rel="icon" sizes="any" type="image/x-icon" />
-<link href={faviconSvg.src} rel="icon" type="image/svg+xml" sizes="any" />
 <meta name="mobile-web-app-capable" content="yes" />
 <link href={appleTouchIcon.src} rel="apple-touch-icon" />
 <link href={appleTouchIcon.src} rel="shortcut icon" />
 <!-- Set theme color -->
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#005ee0" />
-<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#565656" />
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#101010" />
