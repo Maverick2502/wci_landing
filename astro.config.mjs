@@ -6,6 +6,9 @@ import { defineConfig } from "astro/config";
 // https://astro.build/config
 export default defineConfig({
   site: "https://wci-landing.vercel.app/",
+  prefetch: {
+    prefetchAll: false,
+  },
   integrations: [
     astroI18next(),
     react(),
