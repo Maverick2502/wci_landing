@@ -1,5 +1,10 @@
 {
-  "menu": "Menu",
+  "menuNav": {
+    "services": "Services",
+    "whyUs": "Why us?",
+    "contact": "Contact",
+    "aboutUs": "About us"
+  },
   "hero": {
     "headerFirstLine": "IT OUTSOURCING",
     "headerSecondLine": "SOLUTIONS",

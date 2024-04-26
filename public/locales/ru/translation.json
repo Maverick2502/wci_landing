@@ -1,5 +1,10 @@
 {
-  "menu": "Меню",
+  "menuNav": {
+    "services": "Услуги",
+    "whyUs": "Почему мы?",
+    "contact": "Оставить заявку",
+    "aboutUs": "О нас"
+  },
   "hero": {
     "headerFirstLine": "РЕШЕНИЯ ДЛЯ",
     "headerSecondLine": "IT-АУТСОРСИНГА",
