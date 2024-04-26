@@ -1,21 +1,20 @@
 import type { LinkI } from "./types";
-import { t } from "i18next";
 
 export const links: LinkI[] = [
   {
-    title: `${t("menuNav.whyUs")}`,
+    title: "Почему мы?",
     href: "/#features",
   },
   {
-    title: `${t("menuNav.services")}`,
+    title: "Услуги",
     href: "/#services",
   },
   {
-    title: `${t("menuNav.contact")}`,
+    title: "Оставить заявку",
     href: "/#contact",
   },
   {
-    title: `${t("menuNav.aboutUs")}`,
+    title: "О нас",
     href: "/about",
   },
 ];
