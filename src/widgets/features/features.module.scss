@@ -35,16 +35,21 @@
     gap: 16px;
     overflow: scroll;
   }
+
+  @include media-mobile {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 
 .card {
   background-color: #eef3f9;
   border-radius: 10px;
-  padding: 44px;
+  padding: 34px;
 
   @include media-mobile {
     width: fit-content;
-    padding: 20px;
+    padding: 24px;
   }
 
   &__flex {
@@ -52,7 +57,9 @@
   }
 
   &__img {
-    margin-bottom: 44px;
+    // MARK: Margin
+    // margin-bottom: 44px;
+    margin-bottom: 24px;
   }
 
   &__title {
@@ -67,7 +74,7 @@
 
   &__description {
     text-align: center;
-    font-size: 14px;
+    font-size: 18px;
     font-weight: 400;
     line-height: 100%;
 
