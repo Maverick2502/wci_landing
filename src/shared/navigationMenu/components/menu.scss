@@ -19,7 +19,7 @@
 
   @include media-mobile {
     width: 300px;
-    height: 300px;
+    height: 320px;
   }
 
   &__list {
@@ -77,7 +77,8 @@
         }
 
         @include media-mobile {
-          font-size: 20px;
+          // font-size: 20px;
+          font-size: 28px;
         }
       }
     }
@@ -104,7 +105,7 @@
         }
 
         @include media-mobile {
-          font-size: 12px;
+          font-size: 14px;
         }
       }
     }
