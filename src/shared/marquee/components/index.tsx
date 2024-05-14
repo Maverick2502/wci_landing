@@ -6,8 +6,8 @@ interface ParallaxProps {
   headerTitle: string;
 }
 
-const BASE_VELOCITY = 40; // Adjust velocity (higher value = faster movement)
-const ANIMATION_DURATION = 120; // Duration in seconds
+const BASE_VELOCITY = 70; // Adjust velocity (higher value = faster movement)
+const ANIMATION_DURATION = 70; // Duration in seconds
 
 function Marquee({ headerTitle }: ParallaxProps) {
   const controls = useAnimation();
@@ -38,7 +38,7 @@ function Marquee({ headerTitle }: ParallaxProps) {
   return (
     <div className="parallax-text">
       <motion.ul className="parallax-text__list" animate={controls}>
-        {Array.from({ length: 50 }).map((_, idx) => (
+        {Array.from({ length: 70 }).map((_, idx) => (
           <li key={idx}>
             <h2>{headerTitle}</h2>
           </li>
