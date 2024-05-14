@@ -3,14 +3,14 @@ import brain from "@assets/icons/brain.svg";
 import globe from "@assets/icons/globe.svg";
 import handshake from "@assets/icons/handshake.svg";
 import shield from "@assets/icons/shield.svg";
-import ParallaxText from "@shared/parallaxText/components";
 import { Image } from "astro:assets";
 import { t } from "i18next";
 import classes from "./features.module.scss";
+import Marquee from "@shared/marquee/components";
 ---
 
 <section class={classes["features"]} id="features">
-  <ParallaxText client:load headerTitle="Почему выбрали нас?" />
+  <Marquee client:load headerTitle="Почему выбрали нас?" />
   <div class={classes["features__container"]}>
     <ul class={classes["card-container"]}>
       <li class={classes["card"]}>

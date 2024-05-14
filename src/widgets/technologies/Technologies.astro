@@ -1,10 +1,10 @@
 ---
-import ParallaxText from "@shared/parallaxText/components";
+import Marquee from "@shared/marquee/components";
 import classes from "./technologies.module.scss";
 ---
 
 <section class={classes["technologies"]}>
-  <ParallaxText client:load headerTitle="Технологии" />
+  <Marquee client:load headerTitle="Технологии" />
   <div class={classes["technologies__container"]}>
     <div class={classes["technologies-block"]}>
       <ul class={classes["technologies-block__list"]}>
