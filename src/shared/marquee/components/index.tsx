@@ -22,6 +22,7 @@ function Marquee({ headerTitle }: ParallaxProps) {
       controls.start({
         x: increment,
         transition: { duration: ANIMATION_DURATION, ease: "linear" },
+        // @ts-ignore
         onComplete: () => {
           controls.set({ x: 0 });
         },
