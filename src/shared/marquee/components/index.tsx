@@ -13,8 +13,10 @@ function Marquee({ headerTitle }: ParallaxProps) {
   const controls = useAnimation();
 
   useEffect(() => {
+    let isMounted = true;
+
     const animateText = async () => {
-      while (true) {
+      while (isMounted) {
         const increment = -100 * BASE_VELOCITY;
 
         await controls.start({
@@ -29,7 +31,7 @@ function Marquee({ headerTitle }: ParallaxProps) {
     animateText();
 
     return () => {
-      controls.stop();
+      isMounted = false;
     };
   }, [controls]);
 
