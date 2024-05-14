@@ -27,6 +27,8 @@
     margin: 0;
 
     & > li {
+      user-select: none;
+
       h2 {
         margin: 0;
         padding: 0;

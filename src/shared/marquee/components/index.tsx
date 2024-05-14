@@ -1,44 +1,52 @@
 import { motion, useAnimation } from "framer-motion";
-import { useEffect } from "react";
+import { useEffect, useRef, type ElementRef } from "react";
 import "./marquee.scss";
 
 interface ParallaxProps {
   headerTitle: string;
 }
 
-const BASE_VELOCITY = 70; // Adjust velocity (higher value = faster movement)
-const ANIMATION_DURATION = 70; // Duration in seconds
+const BASE_VELOCITY = 50; // Adjust velocity (higher value = faster movement)
+const ANIMATION_DURATION = 120; // Duration in seconds
 
 function Marquee({ headerTitle }: ParallaxProps) {
   const controls = useAnimation();
+  const listRef = useRef<ElementRef<"ul">>(null);
 
   useEffect(() => {
-    let isMounted = true;
+    let animationInterval: number;
 
-    const animateText = async () => {
-      while (isMounted) {
-        const increment = -100 * BASE_VELOCITY;
+    const startAnimation = () => {
+      const increment = -BASE_VELOCITY * ANIMATION_DURATION;
 
-        await controls.start({
+      controls.start({
+        x: increment,
+        transition: { duration: ANIMATION_DURATION, ease: "linear" },
+        onComplete: () => {
+          controls.set({ x: 0 });
+        },
+      });
+
+      animationInterval = window.setInterval(() => {
+        controls.start({
           x: increment,
           transition: { duration: ANIMATION_DURATION, ease: "linear" },
         });
-
-        controls.set({ x: 0 });
-      }
+      }, ANIMATION_DURATION * 1000);
     };
 
-    animateText();
+    startAnimation();
 
     return () => {
-      isMounted = false;
+      clearInterval(animationInterval);
+      controls.stop();
     };
   }, [controls]);
 
   return (
     <div className="parallax-text">
-      <motion.ul className="parallax-text__list" animate={controls}>
-        {Array.from({ length: 70 }).map((_, idx) => (
+      <motion.ul ref={listRef} className="parallax-text__list" animate={controls}>
+        {Array.from({ length: 50 }).map((_, idx) => (
           <li key={idx}>
             <h2>{headerTitle}</h2>
           </li>
